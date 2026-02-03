@@ -7,6 +7,7 @@
   </head>
   <body>
     <script>
+      // 1. 자바스크립트 개요
       //문자열 출력: 작은따음표 or 큰따옴표
       document.write("자바스크립트 공부!!" + "<br>");
       //주석 : 실행안되는 코드들(보통 코드에 대한 설명, 쓸데없는 코드를 주석으로 표시한다.)
@@ -63,6 +64,98 @@
       console.log(3 <= 2);
       console.log(3 == 3); //== 같다(equal)
       console.log(3 != 3); // != 같지않다(not) !는 부정연산자 */
+      document.write("----------------");
+      document.write("<br>");
+
+      // 2. 자바스크립트의 기본 문법
+
+      //prompt("나이가 몇살이니?", "");
+      //confirm("정말 취소하시겠습니까? ");
+
+      console.log(5 == "5"); //항등 연산자 equal
+      console.log(5 === "5"); //데이터유형까지 일치해야함
+
+      //typeof : 데이터타입 확인하는 함수
+      console.log(typeof 5); //number(숫자)
+      console.log(typeof "5"); //string (문자열)
+      console.log(typeof 5.5); //number(숫자)
+      console.log(typeof true); //bollean(논리형)
+      console.log(typeof "true"); //bollean(논리형)
+
+      // ==데이터 타입까지는 확인하지 않음(모양만 같으면 됨) 등가비교연산자
+      // ===데이터 타입까지는 확인함 (typeof로 뽑아서 데이터타입도 일치해야함)
+      // = 대입 연산자(오른쪽의 데이터를 왼쪽 변수에 대입)
+
+      // let age = 10; //10이라는 데이터를 age라는 변수에 대입한다!!!
+
+      // document.write("철수의 나이는 " + age + " 살이다");
+      // document.write("<br>");
+      // document.write(age + 30 + "살은 내 친언니 나이입니다.");
+      // document.write("<br>");
+      // //var let const
+      // /*var name = "gildong"; //문자열 'gildong'을 name이라는 변수명에 대입
+      // console.log(name);
+      // console.log(typeof (name));
+      // console.log(name == "gildong");
+
+      // var name = "juli";
+      // console.log(name); */
+
+      // /*let name = 'gildong';
+      // console.log(name);
+
+      // let name = 'juli';
+      // console.log(name); */
+
+      // const name='gildong'; //변수 재선언 불가능
+      // name='juli' //값 변경도 불가능-에러발생!
+      // document.write(name);
+
+      // var name = "gildong"; //변수 재선언 가능
+      // name = "juli"; //값 변경도 가능
+      // document.write(name);
+      // document.write("<br>");
+
+      // // let name='gildong'; //변수 재선언 불가능
+      // // name='juli' //값 변경은 가능
+      // // document.write(name);
+
+      // // let var const 가 앞에 있으면 새로운 공간을 만들겠다.
+
+      // //n1 이라는 이름의 변수선언
+      // var n1=100; //100을 n1에 대입
+      // var n2=90;
+
+      // document.write(n1)
+      // document.write(n2)
+
+      // // let 1str; //숫자가 먼저 나올 수 없음     
+      // let myPassword;
+      // let _str;
+      // let $str='aa';
+      // console.log($str);
+      // //let my password; //공백 불가능
+      // //카멜표기법
+      // let yourPassword; //두번째 단어의 첫글자를 대문자로 표현
+      // let myId;
+
+      //데이터 유형 : 숫자, 문자열, 불(논리), 객체, undefined, 함수
+      let num=20;
+      console.log(num);
+
+      let name='33';
+      let str='자바스크립트 재밌네';
+
+      let bool1 = 4>5;
+      console.log(bool1);
+
+      let bool2 = true;
+      console.log(bool2);
+
+      //alert, prompt, confirm
+      let age = prompt('나이 입력해라'); //내가 입력한 나이가 age 변수에 대입됨
+      console.log(age); // 값 입력 후 확인 누르면 값이 뜨고, 아무것도 입력하지 않으면 공백, 취소는 null을 리턴
+      
     </script>
   </body>
 </html>
