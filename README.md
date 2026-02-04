@@ -1,6 +1,33 @@
 # IBM X RED HAT AI 과정
 
 ## JavaScript
+
+## 02-04 자바스크립트 기본문법 - 데이터 타입과 변수
+- 숫자 뒤 n을 붙이면 bigint형이 됨.
+```
+    document.write(Number.MAX_SAFE_INTEGER + "<br>")
+    //9007199254740991
+    document.write(typeof(10) + "<br>");
+    //숫자 뒤 n을 붙이면 bigint형이 됨.
+    //bigint는 정수만 됨
+    //10n+1 더할 수 없음(타입안맞으면 안됨)
+    //10n + 1n //가능
+    document.write(typeof(10n) + "<br>" + 10n);
+    // ->bigint
+    // 10
+```    
+---
+
+## 조건문과 반복문
+### 자동 형 변환 
+```
+document.write('100'>90); // **자동 형 변환** -> true
+document.write('2'>'10'); //2랑 1이랑 비교해서 2가 크기때문에 true로 나옴(문자열이라서)
+```
+
+**num=parseInt(num);  //문자를 정수로 바꿔 다시 num에 대입한다**  
+---
+
 ## 02-03 자바스크립트 개념과 특징
 ### 1. 자바스크립트란?
 
