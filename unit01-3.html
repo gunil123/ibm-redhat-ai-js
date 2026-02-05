@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //함수 왜쓰는가?
+      //반복해서 사용되는 코드의 집합을 만들고 필요할 때 마다 호출해서 쓴다.
+      //**호이스팅**
+      // function fun1(){   //함수 정의만 구현
+      //     for(let i = 1; i<=10; i++){
+      //         document.write(i);
+      //     }
+      // }
+      // //함수를 호출해야 함수가 실행된다!!!
+      // fun1();
+
+      // //매개변수=입력값=파라미터
+      // function fun(name){
+      //     let msg = `안녕 ${name}`;
+      //     console.log(msg);
+      // }
+      // fun(`길동`); //함수호출해야 함수 안 블럭 실행됨
+
+      // function gugu(){
+      //     let n = prompt("단 입력");
+
+      //     //구구단 입력
+      //     for(i = 1; i <=9; i++){
+      //         document.write(n*i+'<br>');
+      //     }
+      // }
+      // gugu();
+
+      //함수명:sumMulti
+      //매개변수 : x,y(2개)
+      // function sumMulti(x,y) {
+      //     if(x==y){  //x와y값 같으면
+      //         return x*y; //x*y를 반환
+      //     }
+      //     else{ //x와값 다르면
+      //         return x+y; //x+y 값 반환
+      //     }
+      // }
+      // console.log(sumMulti(10,4));
+      // console.log(sumMulti(10,10));
+      // function sumMulti1(x,y) {
+      //     return (x == y) ? x*y : x+y;
+      // }
+      // console.log(sumMulti1(4,10))
+
+      //     let x = parseInt(prompt('첫번째 수'));
+      //     let y = parseInt(prompt('두 번째 수'));
+
+      //     //함수명: maxXY
+      //     //매게변수는 x랑 y
+      //     function maxXY(x,y){
+      //         if(x==y){
+      //             return '같다';
+      //         }
+      //         else if(x > y) {
+      //             return `${x}가 ${y}보다 작다`;
+      //         }
+      //         else{
+      //         return `${x}가 ${y}보다 작다`;
+      //     }
+      // }
+      //     alert(maxXY(x,y));
+
+      // function pro(n){
+      //     document.write("나이는"+ n + "살이다")
+      // }
+      // pro(2);
+      // pro(25);
+      // function total(a,b){
+      //     for(let i = a; i <=b; i++){
+      //         document.write(i+"<br>");
+      //     }
+      // }
+      // total(1,100);
+      // total(1,10);
+      // function meter(ki){
+      //     return (ki/100);
+      // }
+      // let n = parseInt(prompt("키 입력"));
+      // document.write(meter(n));
+      //1~100까지 합 받는 함수
+      //     function total(a,b){
+      //         let sum = 0;
+      //         for(let i=a; i <= b; i++){
+      //         sum+=i;
+      //     }
+      //     return sum;
+      //    }
+      //    document.write(total(1,100));
+      //두 수중 큰 값 출력(삼항조건연산자)
+      // function big(a,b) {
+      //  return a > b ? a : b;
+      // }
+      // document.write(big(4.4, 1, 1))
+
+      //전역변수 : 함수 밖에서 선언 / 프로그램 전역에서 사용 가능
+      // 지역변수 : 선언됨 함수 안에서 사용 가능
+      // let n = 10;
+
+      // function f(){
+      //     let m = 1; //지역변수
+      //     document.write(m+'<br>');
+      //     document.write(n+'<br>');
+      // }
+      // f();
+      // function cal(x, y, z) {
+      //   switch (x) {
+      //     case "+":
+      //       document.write(y + z);
+      //       break;
+      //     case "-":
+      //       document.write(y + z);
+      //       break;
+      //     case "*":
+      //       document.write(y * z);
+      //       break;
+      //     case "/":
+      //       document.write(y / z);
+      //       break;
+      //   }
+      // }
+
+      // let a = prompt("사친연산 중 하나 입력해라");
+      // let b = parseInt(prompt("첫 번째 정수 입력"));
+      // let c = parseInt(prompt("두 번째 정수 입력"));
+
+      // cal(a, b, c);
+      //문제1 (for)
+      let sum = 0;
+      for(let a = 1; a <= 10; a++){
+        sum += a;
+      }
+      document.write(sum + '<br>');
+      //문제1 (while)
+      let b = 1;
+      let sum1 = 0
+      while(b <= 10){
+        sum1 += b;
+        b++;
+      }
+      document.write(sum1 + '<br>');
+      //문제1 (do~while)
+      let c = 1;
+      let sum2 = 0;
+      do{
+        sum2 += c;
+        c++;
+      }
+      while(c <= 10);
+      document.write(sum2 + '<br>')
+
+      //문제2 while(true)사용
+      let sum3 = 0;
+      let count = 0;
+      while(true){
+        let num = parseInt(prompt('정수를 입력하세요!'));
+        if(num == 0) {
+          break;
+        }
+        else{
+          sum3 += num;
+          count++;
+        }
+      }
+      document.write('평균 : ' + (sum3 / count));
+    </script>
+  </body>
+</html>
