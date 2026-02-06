@@ -777,11 +777,3 @@ console.log(age); // 값 입력 후 확인 누르면 값이 뜨고아무것도 �
 // document.writre(typeof(msg2));
 
 ```
-
-```
-
-```
-
-```
-
-```
