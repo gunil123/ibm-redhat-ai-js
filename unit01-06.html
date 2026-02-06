@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <!-- 버튼명은 아메리카노, 버튼을 클릭시 cafe 함수가 호출된다
+    <button onclick="food(this.value)" value="food1">떡볶이</button>
+    <button onclick="food(this.value)" value="food2">라면</button>
+    <button onclick="food(this.value)" value="food3">김밥</button>
+    -->
+    <script>
+        // let restaurant = '신전떡볶이';
+        // //객체 = 변수+함수
+        // function Menu(title, price, num){
+        //     this.title = title;
+        //     this.price = price;
+        //     this.num = num;   
+            
+        //     this.result=function() {
+        //         alert('분식집' + restaurant);
+        //         alert('선택한 메뉴 정보' + this.title + "," + this.price + "," + this.num);
+        //     }
+        // }   
+        // let food1 = new Menu('치즈라면', 15000, 2);
+        // let food2 = new Menu('신전', 2000, 3);
+        // let food3 = new Menu('참치김밥', 4000, 4);    
+
+        // function food(e){
+        //     if(e=='food1'){
+        //         food1.result();
+        //     }
+        //     else if(e == 'food2'){
+        //         food2.result();
+        //     }
+        //     else if(e == 'food3'){
+        //         food3.result();
+        //     }
+        // 
+        //문제1
+        function num(){
+            let a = parseInt(prompt('1~4사이 정수를 입력하세요'));
+            switch(a){
+                case 1:
+                case 3:
+                    alert('남자');
+                    break;
+                case 2:
+                case 4:
+                    alert('여자');
+                    break;
+                default:
+                    alert('1부터 4사이 정수로 입력하세요!');
+            } 
+        }
+        num();
+        // 문제2.
+        let result = () => {
+            let a = parseInt(prompt('정수를 입력하세요.'));
+            let b = parseInt(prompt('정수를 입력하세요.'));
+            if(a == b){
+                document.write(a * b);
+            }
+            else if(a != b){
+                document.write(a + b);
+            }
+        };
+        result();
+
+        //문제3.
+        let result2 = () => {
+            let n = parseInt(prompt('정수를 입력하세요'));
+            let sum= 0
+            for(let i = 0; i <= n; i++){
+                sum += i;
+            }
+            return sum;
+        };
+        document.write(result2())
+        // 문제4.
+        let result3 = () => {
+            let n1 = prompt('정수를 입력하세요');
+            if(isNaN(n1)) {
+                document.write('오류');
+            } else {
+                for(let n2 = 1; n2 <= n1; n2++){
+                    document.write('*');
+                }
+            }
+        };
+        result3();
+    </script>
+</body>
+</html>

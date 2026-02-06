@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        let n = 0; //초기식
+
+        while(true){
+            if(n > 30) {
+                break;
+            }
+            if(n % 5 ==0){
+                n++
+                continue;
+            }
+            document.write(`${n}` + "<br>");
+            n++; 
+        }
+        */
+      //    let sum = 0;
+      //    let i = 0;
+      //    while(true) {
+      //     let n = parseInt(prompt("정수입력"));
+      //     sum += n;
+      //     i++;
+
+      //     if(n==0){
+      //         i--;
+      //         break;
+      //     }
+      //    }
+      //    document.write(`평균 ${sum/i}`);
+      /*
+    let dan = 2;
+
+    while(true) {
+        if(dan==10){
+            break;
+        }
+        for(let i =1;i<=dan; i++){
+            document.write(dan + " * " + i + " = "+ (dan*1)+'<br>');
+        }
+        dan+=2;
+    }
+  */
+      // let name = 'tom';
+
+      // function call{
+      //     let mghi="hi";
+      //     console.log(`${msg} ${name}`);
+      // }
+      // call();
+      // let n = 100;
+      // let m = prompot('수 입력');
+
+      // if(isNaN(m)){
+      //     alert('다시 입력');
+      // }
+      // else{
+      //     alert(n*m);
+      // }
+
+      // document.write(isNaN(100) + '<br>'); //false
+      // document.write(isNaN("100") + '<Br>');  //false 숫자 100으로 변환됨
+      // document.write(isNaN("abc") + '<Br>');    //true
+      // document.write(isNaN("33")  + "<Br>"); //false 숫자 33.33으로 변환됨
+      // function gugu() {
+      //     let n; //지역변수
+      //     while(true){
+      //         n = parseInt(prompt('정수 입력해라'));
+      //         //n이 1보다 작거나 9보다 크거나 숫자가 아닌 경우
+      //         if(n<1 || n>9 || isNaN(n)){
+      //             alert('1~9사이 수만 입력');
+      //         }
+      //         else{
+      //             break;
+      //         }
+      //     }
+      //     for(let i=1; i<=9; i++) {
+      //         document.write(`${n}*${i}=${n*i} <br>`);
+      //     }
+      // }
+      // gugu();
+
+      // function show(a,b) {
+      //     let str="";
+      //     for(let i = 1; i <= b; i++){
+      //         str += a;
+      //     }
+      //     return str;
+      // }
+      // document.write(show(`$`,10))
+
+      //let 변수명 = function() {
+      //실행할 코드
+      //}
+      // 변수명();
+      //좀 더 간결하게 작성하는 함수(화살표 함수)
+      //1. 변수식 (변수명=함수명)
+      // let sum=function(a,b){
+      //     return a + b;
+      // }
+      // alert(sum(3,4));
+      // //2. ** 화살표 함수**-> function 키워드 없음, return 키워드 생략가능
+      // let sum1 = (a, b) => {
+      //     return a + b;
+      // }
+      // let sum2=(a,b) => a+b;
+      // alert(sum2(3,4));
+
+      //alert로 'hi'로 출력하는 함수 -> pro 함수
+      // let pro = () => {
+      //     alert('hi');
+      // }
+      // pro();
+
+      //화살표함수로 aa, 3 출력
+      // let pro2 = (a,b) => {
+      //     let msg = `${a} + ${b}`;
+    //   //     return msg;
+    //   //         }
+    //   // alert(pro2('aa',3))
+
+    //   let ary = [1, 2, 3, 4, 5];
+    //   document.write(typeof ary + "<br>");
+    //   document.write(ary[0] + " " + ary[1] + "<br>");
+
+    //   //배열 개수(배열명.legnth)
+    //   document.write(ary.length); //5
+    //   //인덱스번호는 0부터 시작하기때문에 배열 개수 -1
+    //   for (let i = 0; i < ary.length; i++) {
+    //     console.log(ary[i]);
+    //   }
+    //   for(let i in ary){ //배열이 가지고 있는 인덱스 값들을 변수 i에 저장하겠다.
+    //      console.log(ary[i]);
+    //   }
+    //문제1.
+    // while(true) {
+    //     let str = prompt('문자를 입력하세요');
+    //     if( str === 'password'){
+    //         break;
+    //     }
+    // }
+    // document.write('통과' + '<br>');
+    // //문제2.
+    // let cal = prompt('수식을 입력하세요');
+    // let result = eval(cal)
+    // document.write(cal + " = "+ result + '<br>');
+
+    //문제2. 두수합 출력
+    let adder = (a,b) => a + b;
+    let result=adder(10,20);
+    document.write(result + '<br>');
+
+    let exp = (a) => a * a;
+    let result2 = exp(3.5);
+    document.write(result2 + '<br>');
+    //문제3.
+    function radius() {
+        let r = Number(prompt('원의 반지름을 입력하세요'));
+        let a = r * r * 3.14;
+        document.write('원의 넓이: ' + a + '<br>');
+        return a;
+    }
+    radius();
+    
+    let radius2 = () => {
+        let r = Number(prompt('원의 반지름을 입력하세요'));
+        return a = r * r * 3.14; 
+    }
+    document.write('원의 넓이: ' + radius2() + '<br>')
+    //문제4.
+    let multi= (a,b) => {
+        let result = 1;
+        for(let i = 1; i <= b; i++) {
+            result*=a;
+        }
+        return result;
+    }
+    document.write(multi(2,10));
+    </script>
+  </body>
+</html>

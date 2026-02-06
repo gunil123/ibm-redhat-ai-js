@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     let student={
+    //   name : 'juli',
+    //   age:42,
+    //   height:188,
+    //   weight:66,
+    //   show : function(){
+    //     console.log(`${student.name}`);
+    //   }
+    // }
+    // student.show(); //함수호출
+
+    // 객체를 기준으로 해서 js로 코드 구현 가능
+    // let car = {
+    //     name:'소나타', //변수
+    //     color:['red','blak','white'],
+    //     fuel:'전기',
+
+    //     operating : function(e){
+    //         if(e=='on'){
+    //             alert('시동 켜져있음');
+    //         }
+    //         else if(e=='off'){
+    //             alert('시동 꺼져있음');
+    //         }
+    //     }
+    // }
+    // //속성 호출 -> 객체명.속성명, 객체명[속성명]
+    // console.log(car.name); //객체 car에 있는 name이라는 변수에 대한 값 출력
+    // //배열시 객체명.배열명[인덱스]
+    // console.log(car.color[1]);
+    // console.log(car.fuel);
+    // //객체명[속성명]
+    // console.log(car['name']);
+    // //메소드(함수) 호출 -> 객체명.함수명
+    // car.operating('off');
+    // // 객체 안 객체 선언방식
+    // let student={
+    //     gildong:{
+    //         age:22,
+    //         job:'programmer'
+    //     },
+    //     tom:{
+    //         age:32,
+    //         job:'student'
+    //     }
+    // }
+    // console.log(student);
+    // console.log(student.tom.age);
+
+    // let student = {
+    //     name: '홍길동',
+    //     show:function(){
+    //         console.log(student.name);
+    //         console.log(this.name);
+    //         console.log(`${student.name}`);
+    //     }
+    // }
+    // student.show();
+        // let student = {
+        //     name: 'tom',
+        //     test:test
+        // }
+        // let student2 = {
+        //     name: 'tom2',
+        //     test:test
+        // }            
+        // function test() {
+        //     console.log(`$(this.name)`);
+        // }            
+        // //객체명이 변경되도 메소드 내에 객체명을 사용하지 않게 좀 더 효율적으로 코드 구현 가능
+        // student.test();
+        // student2.test();
+
+        //2. 생성자함수(비슷한 객체를 여러 개 만들 때)
+        // let adr='서울';  //전역변수
+        // function Item(product, price, deliver){
+        //     this.product=product; //new로 생성되어지는 객체 자신
+        //     this.price=price;
+        //     this.deliver=deliver;
+
+        //     this.show = function() {
+        //         console.log(`${adr} ${product}가격은 ${price}이고 배송은 ${deliever}`);
+        //     }
+        // }
+        // //실제 객체 생성코드
+        // let item1=new Item('핸드폰케이스',3000,'로켓배송');
+        // let item2=new Item('식빵',1000,'새벽배송');
+        // item1.show();
+        // item2.show();
+
+
+        //문제3
+        // function test(name, kor, eng, math){
+        //     this.name=name;
+        //     this.kor=kor;
+        //     this.eng=eng;
+        //     this.math=math;
+
+        //     this.avg = function (){
+        //         return (this.kor + this.eng + this.math) / 3;
+        //     }
+        // }
+        // let name1=new test('김길동', 95, 95 ,80);
+        // let name2=new test('박길동', 66, 76, 79);
+        
+        // document.write(name1.avg()+'<br>');
+        // document.write(name2.avg());
+        function student(name, score) {
+            this.name=name;
+            this.score=score;
+
+            this.getgrade = function() {
+                if(score >= 90){
+                    return 'A';
+                }
+                else if(score >= 80) {
+                    return 'B';
+                }
+                else {
+                    return 'F'
+                }
+            }
+        }
+
+        let stu1 = new student("juli",50);
+        let stu2 = new student("tom",100);
+
+        document.write(stu1.name + "학점" + stu1.getgrade() +"<br>");
+        document.write(stu2.name + "학점" + stu2.getgrade() + "<br>");
+        
+   </script>
+</body>
+</html>

@@ -2,7 +2,224 @@
 
 ## JavaScript
 
-## 02-05 조건문과 반복문
+### 02-06 isNaN - 숫자 변환한 다음 NaN 이면 true
+
+```
+document.write(isNaN(100) + '<br>'); //false
+document.write(isNaN("100") + '<Br>');  //false 숫자 100으로 변환됨
+document.write(isNaN("abc") + '<Br>');    //true
+document.write(isNaN("33")  + "<Br>"); //숫자 33.33으로 변환됨
+```
+
+### 1.3 변수식 함수 선언
+
+- 변수식 함수 선언 기본 형식 : 함수의 이름이 없고 함수 전체를 변수에 담아서 변수를 호출해서 사용한다.
+
+```jsx
+let 변수명 = function() {
+	실행할 코드
+}
+변수명();
+```
+
+---
+
+```
+//좀 더 간결하게 작성하는 함수(화살표 함수)
+//1. 변수식 (변수명=함수명)
+let sum=function(a,b){
+    return a + b;
+}
+alert(sum(3,4));
+//2. ** 화살표 함수**-> function 키워드 없음, return 키워드 생략가능
+let sum1 = (a, b) => {
+    return a + b;
+}
+let sum2=(a,b) => a+b;
+alert(sum2(3,4));
+```
+
+```
+let multi = (a, b) => a ** b;
+
+document.write(multi(2, 10)); // 1024 JS 에서 **연산자가 거듭제곱 연산
+```
+
+## 배열과 객체
+
+### 1. 배열(array)이란?
+
+- 여러 개의 원소들을 연속적으로 저장하고 전체를 하나의 단위로 다루는 데이터 구조
+
+```
+let 배열이름 = ['값1', '값2', '값3']
+
+let 배열이름 = [값1, 값2, 값3]
+```
+
+- 문자의 경우 따옴표로 묶고, 문자가 아닌 경우는 묶지 않는다.
+- , 를 기준으로 인덱스라 부르고, 인덱스 번호는 항상 0부터 시작한다.
+- 배열에서 반복문을 사용할 수 밖에 없다.
+
+```
+let ary = [1, 2, 3, 4, 5];
+document.write(typeof(ary)+'<br>'); //object js에서 배열은 객체임.
+document.write(ary[0] + " " + ary[1]);
+
+//배열 개수(배열명.legnth)
+document.write(ary.length); //5
+
+인덱스번호는 0부터 시작하기때문에 배열 개수 -1
+for (let i = 0; i < ary.length; i++) {
+  console.log(ary[i]);
+}
+```
+
+### 2.for in문
+
+```html
+for(let i in 배열명) { 반복할 식 }
+```
+
+```
+for(let i in ary){ //배열이 가지고 있는 인덱스 값들을 변수 i에 저장하겠다.
+  console.log(ary[i]);
+}
+```
+
+---
+
+### 3. 객체
+
+- 현실 세계는 객체들의 집합
+- 객체는 하나의 값으로 표현할 수 없고, 여러 개의 속성과 값의 묶음으로 표현됨
+- 객체는 속성(property) 와 값의 쌍으로 표현됨
+- 객체는 여러 개의 함수를 가질 수 있는데, 함수를 메소드(method)라고 부른다
+
+### 3.1 객체의 선언 기본 형식
+
+```
+let student={
+      name : 'juli',
+      age:42,
+      height:188,
+      weight:66,
+      show : function(){
+        console.log(`${student.name}`);
+      }
+    }
+    student.show(); //함수호출
+```
+
+- 변수 : 데이터 한 개 저장하는 공간
+- 배열 : 데이터를 여러 개 저장하는 공간
+- 객체 : 데이터를 집합적으로 저장하는 공간
+
+```
+// 객체를 기준으로 해서 js로 코드 구현 가능
+    let car = {
+        name:'소나타', //변수
+        color:['red','blak','white'],
+        fuel:'전기',
+
+        operating : function(e){
+            if(e=='on'){
+                alert('시동 켜져있음');
+            }
+            else if(e=='off'){
+                alert('시동 꺼져있음');
+            }
+        }
+    }
+    //속성 호출 -> 객체명.속성명, 객체명[속성명]
+    console.log(car.name); //객체 car에 있는 name이라는 변수에 대한 값 출력
+    //배열시 객체명.배열명[인덱스]
+    console.log(car.color[1]);
+    console.log(car.fuel);
+    //객체명[속성명]
+    console.log(car['name']);
+    //메소드(함수) 호출 -> 객체명.함수명
+    car.operating('off');
+```
+
+```
+let student = {
+        name: '홍길동',
+        show:function(){
+            console.log(student.name);
+            console.log(this.name);  //this: show함수가 들어있는 객체를 의미
+            console.log(`${student.name}`);
+        }
+    }
+student.show();  //함수 호출
+```
+```
+let student = {
+    name: 'tom',
+    test: function() {
+        console.log(`${this.name}`);
+    }
+}
+let student2 = {
+    name: 'tom2',
+    test: function() {
+        console.log(`${this.name}`);
+    }
+}
+//객체명이 변경되도 메소드 내에 객체명을 사용하지 않게 좀 더 효율적으로 코드 구현 가능
+student.test();
+student2.test();
+```
+---
+
+### 3.2 생성자 함수
+- 비슷한 객체를 여러 개 만들어야 하는 경우에 사용됨
+```
+function student(name, score) {
+  this.name=name;
+  this.score=score;
+
+  this.getgrade = function() {
+    if(score >= 90){
+      return 'A';
+    }
+    else if(score >= 80) {
+      return 'B';
+    }
+    else {
+      return 'F'
+    }
+  }
+}
+
+let stu1 = new student("juli",50);
+let stu2 = new student("tom",100);
+
+document.write(stu1.name + "학점" + stu1.getgrade() +"<br>");
+document.write(stu2.name + "학점" + stu2.getgrade() + "<br>");
+
+---
+- 변수(속성) : tv크기, 색상, 모양...
+- 함수(기능) : on/off, ch, volume +/-  ...
+- (틀만 구현해놓고) 비슷한 객체를 여러 개 생성할 수 있다: 생성자 함수
+
+---
+```
+<body>
+    <!--버튼명은 아메리카노, 버튼을 클릭시 cafe 함수가 호출된다
+    value: 아메리카노 버튼이 가지고 있는 실제 데이터(americano-->
+    <button onclick="cafe(this.value)" value="americano">아메리카노</button>
+    <button onclick="cafe(this.value)" value="latte">라떼</button>
+    <button onclick="cafe(this.value)" value="smoothie">스무디</button>
+</body>
+```
+
+
+---
+
+## 02-05 JS 수업 내용
+
+## 조건문과 반복문
 
 ### 11. 중첩 for 반복문 : 반복할 것이 2개 이상인 경우 사용
 
@@ -189,9 +406,12 @@ let c = parseInt(prompt("두 번째 정수 입력"));
 
 cal(a, b, c);
 ```
+
 ---
 
-## 02-04 자바스크립트 기본문법 - 데이터 타입과 변수
+## 02-04 JS 수업 내용
+
+## 자바스크립트 기본문법 - 데이터 타입과 변수
 
 - 숫자 뒤 n을 붙이면 bigint형이 됨.
 
@@ -212,7 +432,7 @@ cal(a, b, c);
 
 ---
 
-## 02-04 조건문과 반복문
+## 조건문과 반복문
 
 ### 자동 형 변환
 
@@ -404,7 +624,9 @@ for(초기값; 조건식; 증감식) {
 2. < body></ body>태그 안
    - 특징: HTML이 모두 렌더링 된 뒤 실행되므로 DOM 접근 안정성 높아서 가장 많이 쓰는 위치이다.
 
-## 02-03 자바스크립트의 기본문법
+## 02-03 JS 수업내용
+
+## 자바스크립트의 기본문법
 
 ---
 
@@ -553,6 +775,8 @@ console.log(age); // 값 입력 후 확인 누르면 값이 뜨고아무것도 �
 // let msg2 = prompt('입력해줘!');
 // document.write(msg+"<br>");
 // document.writre(typeof(msg2));
+
+```
 
 ```
 
