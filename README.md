@@ -227,7 +227,7 @@ fruit2.push('PineApple'); //맨 뒤 요소 추가
 console.log(fruit2);    //['Orange', 'Kiwi', 'PineApple']
 
 fruit2.unshift('Strawberry'); //맨 앞 요소 추가
-console.log(fruit2);    //['Orange', 'Kiwi', 'PineApple']
+console.log(fruit2);    //['Strawberry', 'Orange', 'Kiwi', 'PineApple']
 ```
 ```jsx
 let list= ['01)자바', '02)DB','3)파이썬', '04)JS'];
@@ -961,8 +961,8 @@ console.log(typeof 5); //number(숫자)
 console.log(typeof "5"); //string (문자열)
 console.log(typeof 5.5); //number(숫자)
 console.log(typeof true); //bollean(논리형)
-console.log(typeof "true"); //bollean(논리형)
-// ==데이터 타입까지는 확인하지 않음(모양만 같으면 됨등가비교연산자)
+console.log(typeof "true"); //bollean(논리형
+// ==데이터 타입까지는 확인하지 않음(모양만 같으면 됨등가비교연산자
 // ===데이터 타입까지는 확인함 (typeof로 뽑아서 데이터타입일치해야함)
 // = 대입 연산자(오른쪽의 데이터를 왼쪽 변수에 대입)
 
@@ -1008,7 +1008,6 @@ console.log(typeof "true"); //bollean(논리형)
 // var n1=100; //100을 n1에 대입
 // var n2=90
 // document.write(n1)
-// document.write(n2)
 // document.write(n2)
 // // let 1str; //숫자가 먼저 나올 수 없음
 // let myPassword;
