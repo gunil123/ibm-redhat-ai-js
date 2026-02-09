@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="test">Head 1</h2>
+    <h2 class="test">Head 2</h2>
+    <h2 class="test">Head 3</h2>
+    <script>
+        // //document.getElementById(단수)
+        // let t1=document.getElementsByTagName('h2'); //복수(배열형태)
+
+        // document.write(t1+"<br>");
+        // document.write(typeof(t1));
+
+        let t1 = document.getElementsByClassName('test');
+
+        t1[0].style.color='red';
+        t1[1].style.color='orange';
+        t1[2].style.color='yellow';
+    </script>
+</body>
+</html>

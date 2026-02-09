@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="di1">
+        <h2>Test 1</h2>
+        <h2>Test 2</h2>
+        <h2>Test 3</h2>
+        <h2>Test 4</h2>
+    </div> 
+    <h2 id="a">Test 5</h2>
+    <h2 id="a1">Test 6</h2>
+<script>
+    //class를 css로 접근할 경우 앞에 .을 붙인다.
+    //id를 css로 접근할 경우 앞에 #을 붙인다.
+    let n=document.querySelector('.di1 h2');
+    //같은 이름의 css선택자가 여러 개 있으면 첫번째 요소만 선택된다!
+    n.style.color='blue';
+
+    //querySeloector 배열로 선택 불가능
+
+    //1. callsname으로 Test 1,2,3,4 접근해서 변수에 저장
+    let classname1 = document.getElementsByClassName('di1');
+    document.write(classname1); //[object HTMLCollection]
+
+    //2. classname1 에 저장된 Test1,2,3,4의 글자색을 orange로
+    for(let i = 0; i<classname1.length; i++){
+        classname1[i].style.color = 'orange';
+    }
+    let a = document.getElementById("a1");
+    let b = document.getElementById("a1") 
+    document.write(a);
+    document.write(b);
+
+</script>   
+</body>
+</html>

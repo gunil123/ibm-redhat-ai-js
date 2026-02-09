@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="t1">Test1</h1>
+    <h1 id="t2">Test2</h1>
+    <h1 id="t3">Test3</h1>   
+    
+    <script>
+        let t2=document.getElementById("t2");
+        //id가 t2인 객체를 얻어서 변수 t2에 대입
+        document.write(t2 + "<Br>");
+        document.write(typeof(t2));
+
+        t2.style.color = 'pink';
+        t2.style.backgroundColor= 'black';
+
+        let t3=document.getElementById("t3");
+        t3.style.fontSize='100px';
+    </script>
+</body>
+</html>

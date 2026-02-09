@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function star() {
+      //     let n = prompt('정수 입력');
+
+      //     if (isNaN(n)){
+      //         document.write('오류');
+      //     }
+      //     else{
+      //         for(let i=0; i <n; i++){
+      //             document.write('*');
+      //         }
+      //     }
+      // }
+      // star();
+
+      //   //1. 기본객체구조
+      //   let n = {
+      //     name: "tom",
+      //     add: function (a, b) {
+      //       return a + b;
+      //     },
+      //   };
+      //   // //2. 생성자 함수(비슷한 객체를 여러 개 만들 때)
+      //   // function n(name) {
+      //     this.name=name;
+      //     this.add=function(a,b){
+      //         return a + b;
+      //     }
+      //}
+      //   function User(name, age, grade) {
+      //     this.name = name;    //this는 생성자 객체 자신을 의미-> 홍길동이 User객체의 name 속성에 대입
+      //     this.age  = age;
+      //     this. grade = grade;
+
+      //     this.show = function() {
+      //         console.log(`이름은 ${name}, 나이는 ${age}`);
+      //     }
+      //   }
+      //   let n = new User('홍길동',65,'diamond');
+      //   let m = new User('홍길동', 22, 'silver');
+      //   n.show();
+      //   m.show();
+
+      //   substr
+      //   let num = prompt('생년월일 입력');
+      //   let a = num.length;   //6글자
+      //   let month = num.substr(2,2);
+      //   let day = num.substr(4,2);
+
+      //   if(a==6){
+      //     alert(month + "월 " + day + "일");
+      //   }
+      //   else {
+      //     alert('에러');
+      //   }
+      // let str= prompt('언어 입력');
+      // if(str.math('자바')||str.match('데이터베이스')){
+      //     alert('백엔드');
+      // }
+      // else if(str.match('react')){
+      //     alert('프론트');
+      // }
+      // let str = prompt('주민번호');
+      // //charAt(index)
+      // let n = str.charAt(6);
+
+      // if(n ==1 || n==3){
+      //     alert('남자')
+      // }
+      // else if(n==2 || num ==4){
+      //     alert('여자');
+      // }
+
+      //  let n = 'Computer';
+
+      // console.log(n.indexOf('C')); //0 특정문자의 인덱스 찾기
+      // console.log(n.indexOf('m')); //2
+
+      // console.log(n.replace('C', 'c')); //C => c
+
+      // let m = '  computer';
+      // console.log(m.trim()); // 앞 뒤 공백 제거
+      // console.log(n.slice(2)); //mputer **2이상 끝까지 출력**
+      // console.log(n.slice(2,4));  //mp  **2이상 4미만 출력**
+
+      // const str1 = "Hello";
+      // const str2 = "world";
+
+      // console.log(str1.concat(str2)); //Helloworld  str1기준으로 str2로 나열
+      // console.log(str2.concat(", ", str1));  //world, Hello  str2기준으로 ,를 사용해 str1나열
+
+      // //눈으로 보기에는 문자열(기본형) 같아보이지만,
+      // //내부적으로 js에서 오토박싱(자동 박싱)으로 내부에서 객체로 처리한다
+      // //new string("hello") -> 객체안에 있는 메소드에 접근 가능
+      // //문자열 (기본형) : 값 자체
+      // let a ="hi";
+      // let b = "hello";
+
+      // //문자열 객체(문자열을 객체로 감싼 것) -> 메소드와 속성 가짐
+      // let a1 = new string("hi");
+      // let b1 = new string("hi"); //주소비교
+
+      // let n = new String("공부는 어렵지만, 재밌네요");
+      //  //인덱스 6에 있는 한 글자 출력
+      // document.write(n.charAt(6)+"<br>");  //지
+      // document.write(n.substr(0,3)+"<br>") //인덱스 0~2까지
+      // document.write(n.slice(0,3)+"<Br>");
+
+      // //split(separater)
+      // document.write(n.split(",")[0] +"<br>"); //배열로 리턴함
+      // document.write(n.split(",")[1] + "<br>");
+
+      // //split(separater, limit)
+      // document.write(n.split(",",1) +"<br>"); //쉼표기준으로 나누되 1개까지만 출력
+      // document.write(n.split(",",2) +"<br>");
+      // document.write(n.split(",",3) +"<br>"); // 쉼표 기준으로 나눈 결과를 최대 1개까지만 배열에 저장
+
+      // let n=prompt('정수1');
+      // let m=prompt('정수2');
+
+      // console.log(n+m);
+      // console.log(Number(n) + Number(m));
+      // console.log(parseInt(n)+parseInt(m));
+
+      // let n1 = '43';
+      // let n2 = Number(n1);
+      // console.log(typeof(n1));
+      // console.log(typeof(n2));
+
+      // //1. 변수식 선언방식
+      // let a = 100;
+      // let b = 'hi';
+      // let c = [1,2,3];
+
+      // //2. 객체형 선언방식(생성자 함수식)
+      // let a1 = new Number('100'); //문자열 '100' -> 숫자형 100
+      // let b1 = new String('hi');
+      // let c1 = new Array(3);
+
+      // let kor=prompt('국어점수');
+      // let math=prompt('수학점수');
+      // let eng=prompt('영어점수');
+
+      // let result=Number(kor)+Number(math)+Number(eng);
+      // console.log(result);
+      // console.log(typeof(result));
+      // console.log((result/3).toFixed(2));
+      // let a = 44.44;
+      // let b = 22.22;
+      // //자리 올림(ceil -> 무조건 올림)
+      // console.log(Math.ceil(a));
+      // console.log(Math.ceil(b));
+      // //자리 내림(floor - > 무조건 내림)
+      // console.log(Math.floor(a));
+      // console.log(Math.floor(b));
+      // //자리 반올림
+      // console.log(Math.round(a));
+      // console.log(Math.round(b));
+
+      // //  0~1 random 수를 무작위로 반환(실수형태)
+      // let num = Math.random();
+      // console.log(num);
+
+      // let num1 = Math.round(Math.random() * 20)+3; // 1 < Math.random < 23
+      // console.log(num1);
+
+      // //50~81 미만
+      // let num2 = Math.round(Math.random() * 50) + 31;
+      // console.log(num2);
+      //오늘 날짜,시간
+      // let day = new Date();
+      // console.log(day);
+
+      // //특정 날짜 시간
+      // let day2 = new Date(2026,11,25);
+      // console.log(day2);   //Mon Jan 25 2027 00:00:00 GMT+0900 (한국 표준시)
+      // //월이 하나 증가되서 출력됨
+
+      // let day3 = new Date(2026,1,17); //js에서는 month가 0부터 시작됨!!!
+      // console.log(day3);
+
+      // //오늘 날짜만 출력
+      // console.log(day.toLocaleDateString());
+      // //오늘 시간만 출력
+      // console.log(day.toLocaleTimeString());
+
+      // let today = new Date();
+      // document.write(today + "<br>");
+
+      // let yyyy=today.getFullYear();
+      // let mm = today.getMonth();
+      // let mm2 = today.getMonth()+1;
+      // let dd = today.getDate();
+
+      // document.write(yyyy + " 년" + mm2 + "월 "  +dd +"일" +"<br>");
+
+      // //시, 분, 초 뽑기
+      // let hh=today.getHours();
+      // let min=today.getMinutes();
+      // let ss=today.getSeconds();
+
+      // document.write(hh + "시 " +min +" 분"+ss +"초" + "<br>");
+
+      // let day=today.getDay();
+      // document.write(day);
+
+      // let today = new Date();
+      // document.write(today.toLocaleDateString() + "<br>");
+
+      // //일 가져옴(9일)
+      // let today2=today.getDate();
+      // document.write(today2+"<br>");
+
+      // //오늘 포함해서 100일 후 계산
+      // // let today3=today.setDate(today2 + 100);
+      // // document.write(today3 + "<Br>");
+
+      // //setDate함수는 mx(타임스템프)를 반환
+      // today.setDate(today2 + 100);
+      // document.write(today.toLocaleDateString()+"<br>");
+
+      //변수선언방식
+      // let fruit=['Apple','banana','Mango'];
+      // let fruit2 = ['Orange', 'Kiwi']
+
+      // console.log(fruit.concat(fruit2));
+      // //['Apple', 'banana', 'Mango', 'Orange', 'Kiwi']
+      // //concat은 원본 유지가 된다.
+
+      // //pop, shift, push, unshift -> 원본 유지 안됨(원본 변경)
+      // fruit.pop(); //맨 뒤요소 제거
+      // console.log(fruit);   //['Apple', 'banana']
+
+      // fruit.shift();//맨 앞요소 제거
+      // console.log(fruit);  //['banana']
+
+      // fruit2.push('PineApple'); //맨 뒤 요소 추가
+      // console.log(fruit2);    //['Orange', 'Kiwi', 'PineApple']
+
+      // fruit2.unshift('Strawberry'); //맨 앞 요소 추가
+      // console.log(fruit2);    //['Orange', 'Kiwi', 'PineApple']
+
+      //     let arr=[1,2,3,4,5];
+      // //3보다 큰 값들만 리턴하는 함수
+      // // function maxNumber(number){
+      // //     return number>3;
+      // // }
+      // // console.log(arr.filter(maxNumber));
+
+      // //filter(callbackFn)
+      // //console.log(arr.filter(maxNumber));
+
+      // //화살표 함수 구조
+      // let n = (a, b) => a+b;
+      // console.log(arr.filter((item) => item > 3));
+    //let arr = [1, 2, 3, 4, 5];
+    //   function plus(a, b) {
+    //     return a + b;
+    //   }
+    //   function multi(a, b) {
+    //     return a * b;
+    //   }
+    //   //배열의 각 요소를 순회하면서 누적하여 하나의 결과값 반환 -> reduce
+    //   console.log(arr.reduce(plus));
+    //   console.log(arr.reduce(multi));
+
+    //   console.log(arr.reduce((a, b) => a + b));
+    //   console.log(arr.reduce((a, b) => a + b));
+
+//     let arr = [1, 2, 3, 4, 5];
+
+//     function ch(a,b){
+//         console.log(`${a}의 인덱스는? ${b}`)
+//     }
+//     arr.forEach(ch);
+//     //배열명.forEach(함수명)
+//     //배열명.forEach(element(현재요소), index(인덱스), array(원본배열))
+
+//     //함수를 따로 안만들고 forEach 안에서 함수 구현함
+//     arr.forEach((a,b,c)=>{
+//         console.log(a,b,c);
+//     })
+//     arr.forEach(function(a,b,c){
+//         console.log(a,b,c);
+// })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id = "body">
+    <script>
+        let body = document.getElementById("body");
+        let today = new Date();
+        let day = today.getDay();
+        if(day == 1 || day== 2|| day== 3){
+            body.style.backgroundColor = 'green';
+        }
+        else if(day == 4 || day == 5){
+            body.style.backgroundColor = 'blue';
+        }
+    </script>
+</body>
+</html>

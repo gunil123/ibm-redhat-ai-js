@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <script>
+        let body = document.getElementById("body");
+
+        let date = new Date();
+        let hours = date.getHours();
+
+        if(hours<12){
+            body.style.backgroundColor='yellow';
+        }
+        else{ 
+            body.style.backgroundColor='green';
+        }
+    </script>
+</body>
+</html>
