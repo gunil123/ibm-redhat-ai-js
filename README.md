@@ -903,8 +903,8 @@ document.write("hi");
 // alert("자바 스크립트")
 console.log("자바스크립트"); //f12 버튼 클릭
 document.write("<br> " + 100); //숫자 데이터는 따옴표묶으면 안된다.
-document.write("100"); //문자열 데이터이다(따옴표 넣었기 때문
-//문자열 : 쌍따옴표 똔느 외 따옴표로 작성
+document.write("100"); //문자열 데이터이다(따옴표 넣었기 때문)
+//문자열 : 쌍따옴표 또는 외 따옴표로 작성
 document.write("안녕");
 document.write("<br>"); //태그 - 문자열로 인식
 document.write("자바스크립트 공부하네");
@@ -964,7 +964,7 @@ console.log(typeof true); //bollean(논리형)
 console.log(typeof "true"); //bollean(논리형)
 // ==데이터 타입까지는 확인하지 않음(모양만 같으면 됨등가비교연산자)
 // ===데이터 타입까지는 확인함 (typeof로 뽑아서 데이터타입일치해야함)
-// = 대입 연산자(오른쪽의 데이터를 왼쪽 변수에 대입
+// = 대입 연산자(오른쪽의 데이터를 왼쪽 변수에 대입)
 
 ```
 
@@ -1008,6 +1008,7 @@ console.log(typeof "true"); //bollean(논리형)
 // var n1=100; //100을 n1에 대입
 // var n2=90
 // document.write(n1)
+// document.write(n2)
 // document.write(n2)
 // // let 1str; //숫자가 먼저 나올 수 없음
 // let myPassword;
