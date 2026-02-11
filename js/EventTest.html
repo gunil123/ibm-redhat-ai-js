@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<!-- <p>Q.컴퓨터 분야 뭐가 관심있니?</p>
+    <!-- <p>Q.컴퓨터 분야 뭐가 관심있니?</p>
 <button id="ans1">답보기</button><br>
 <div id ="com"></div>
 
@@ -50,7 +52,7 @@
             }
         }    
     </script> -->
-<!-- 
+    <!-- 
     <script>
         //문제3
         // for(let i = 1; i <= 10; i++) {
@@ -87,38 +89,38 @@
             n.style.color = "pink"
         }) -->
     <!--문제6-->
-    <select id = "sel"></select>
+    <select id="sel"></select>
     <script>
-        let years=[1990,1991,1992,1993,1994];
+        let years = [1990, 1991, 1992, 1993, 1994];
         let select = document.getElementById("sel");
 
-        for(let i in years){     //i : 인덱스 years[i]:배열안에 있는 데이터 
-            let n=document.createElement("option");
-            n.innerText=years[i];
+        for (let i in years) {     //i : 인덱스 years[i]:배열안에 있는 데이터 
+            let n = document.createElement("option");
+            n.innerText = years[i];
             select.appendChild(n);
         }
     </script>
     <br>
     <select>
-    <option>1990</option>
-    <option>1991</option>
-    <option>1992</option>
-    <option>1933</option>
-    <option>1994</option>
+        <option>1990</option>
+        <option>1991</option>
+        <option>1992</option>
+        <option>1933</option>
+        <option>1994</option>
 
     </select> <br>
     <!--문제7-->
-    <h1 id = "h1">자바 스크립트</h1>
+    <h1 id="h1">자바 스크립트</h1>
     <script>
         let n = document.getElementById("h1")
 
-        n.addEventListener(`mouseover`, function(){
-            n.style.color='red';
+        n.addEventListener(`mouseover`, function () {
+            n.style.color = 'red';
         })   
     </script>
     <!--문제8-->
-    <p>이름: <input type="text"  id = "name"></p>
-    <p>성적: <input type="text" id = "score"></p>
+    <p>이름: <input type="text" id="name"></p>
+    <p>성적: <input type="text" id="score"></p>
     <input type="button" onclick="save()" value="저장">
     <input type="button" onclick="reset()" value="리셋">
     <li id="result"></li>
@@ -139,23 +141,49 @@
         }
     </script>
     <!--문제9-->
-    <input type = "button" value="버튼 눌러줘!!!" onclick="">
+    <input type="button" value="버튼 눌러줘!!!" id="colorBtn">
     <p>
-        [스포츠서울 | 이소영 기자] <span class ="a">코리안</span> 빅리거들의 희비가 엇갈렸다. <br>
-        2026시즌 개막전 예상 <span class ="b">라인업이</span> 공개된 가운데 <br>
-        <span class ="c">이정후</span>(28·샌프란시스코)는 이름을 올렸지만, <br>
-        <span class ="d">김혜성</span>(27·LA 다저스)-송성문(30·샌디에이고)은 나란히 제외됐다.
+        [스포츠서울 | 이소영 기자] <span class="a">코리안</span> 빅리거들의 희비가 엇갈렸다. <br>
+        2026시즌 개막전 예상 <span class="b">라인업이</span> 공개된 가운데 <br>
+        <span class="c">이정후</span>(28·샌프란시스코)는 이름을 올렸지만, <br>
+        <span class="d">김혜성</span>(27·LA 다저스)-송성문(30·샌디에이고)은 나란히 제외됐다.
     </p>
     <script>
-            let n1 = document.getElementsByTagName('span');
-            for (let i = 0; i < n1.length; i++) {
-            n1[i].onclick = function() {
-            this.style.backgroundColor = 'orchid ';
-                }
-            }
+    const btn = document.getElementById('colorBtn');
+    const spans = document.getElementsByTagName('span');
+
+    btn.addEventListener('click', function() {
+        for (let i = 0; i < spans.length; i++) {
+            spans[i].style.color = 'orchid';
+            spans[i].style.fontSize = '30px';
+        }
+    });
     </script>
 
     <!--문제10-->
+<input type="checkbox" name="menu" value="5000" onclick="update(this)"> 아메리카노 5000원 
+<input type="checkbox" name="menu" value="5500" id="latte" onclick="update(this)"> 라떼 5500원 
+<input type="checkbox" name="menu" value="7000" onclick="update(this)"> 딸기라떼 7000원 
+
+<p>
+    내야할 금액 <input type="text" id="total" value="0" readonly>
+</p>
+
+<script>
+    let sum = 0; 
+
+    function update(obj) {
+        let totalInput = document.getElementById('total');
+        let price = parseInt(obj.value); 
+
+        if (obj.checked) {
+            sum += price; 
+        } else {
+            sum -= price; 
+        }
+        totalInput.value = sum;
+    }
 </script>
 </body>
+
 </html>
