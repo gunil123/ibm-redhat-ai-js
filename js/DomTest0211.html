@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<script>
+    function on() {
+        //body태그 객체추출
+        let n = document.getElementById("Body");
+        //div 태그 생성
+        let m = document.createElement('div');
+        //div태그 사이에 "새로생성함" 문자열 넣기
+        m.innerHTML = '새로 생성함';
+        //body태그에 div를 자식으로 붙이기
+        n.appendChild(m);
+        //<div id="me">새로 생성함</div>
+        //속성 추가
+        m.setAttribute('id', 'me')
+    }
+</script>
+<body id="Body">
+<!--   
+  //<script>
+    // //body에다 h2를 생성해서 자바스크립트로 동적으로 추가함
+    
+    // //element동적 생성
+    // let n=document.createElement('h2');
+
+    // //body태그에다 h2넣어라 자식으로 
+    // document.body.appendChild(n);
+
+    // n.innerHTML="엘리먼트";
+     
+  //</script> -->
+
+중국 시나스포츠는 '부정행위 적발! 한국의 여자 크로스컨트리 스키 선수
+ 두 명이 금지 물질을 스키 도구에 사용한 사실이 드러나 실격 처리됐다'고 11일(한국시간) 보도했다.
+ 로이터통신도 이날 '국제스키연맹(FIS)이 한국 여자 크로스컨트리 스키 선수가
+  금지 물질 양성 반응을 보여 동계올림픽 여자 스프린트 클래식 예선에서 실격 처리했다'고 전했다.
+
+보도에 따르면, 실격 처리된 선수는 한다솜(32·경기도청)과 이의진(25·부산광역시체육회)이다. 
+스키에서 2023년부터 환경과 인체 건강 문제로 금지된 불소 왁스가 검출됐다
+<a href="#" onclick="on();">생성</a>
+</body>
+</html>

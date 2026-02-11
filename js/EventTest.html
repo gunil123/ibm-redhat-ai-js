@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <p>Q.컴퓨터 분야 뭐가 관심있니?</p>
+<button id="ans1">답보기</button><br>
+<div id ="com"></div>
+
+<p>Q. 뭐 먹고싶니?</p>
+<button id="ans2">답보기</button><br>
+<div id = "food"></div>
+
+<script>
+    let n = document.getElementById('ans1');
+    let f = document.getElementById('ans2');
+    n.addEventListener('click', function () {
+        let c = document.getElementById('com');
+        let p = document.createElement('p');
+        c.appendChild(p);
+        p.innerText="서버";
+    })
+    f.addEventListener('click', function (){
+        let f = document.getElementById('food');
+        let p = document.createElement('p');
+        f.appendChild(p);
+        p.innerText="짜장면";
+    }) -->
+    <!--문제 1-->
+    <!-- <script>
+        let n = parseInt(prompt("점수를 입력하시오"));
+        if(n >= 90) {
+            document.write('A');
+        }
+        else if(n >= 80 && n <90) {
+            document.write('B');
+        }
+        else{
+            document.write('F');
+        }
+    </script> -->
+    <!-- <script>
+        //문제2
+        for(let i = 10; i <=35; i++) {
+            if(i % 5 == 0) {    
+                document.write(`<span style="font-size:${i}px">${i}px</span>`);
+            }
+        }    
+    </script> -->
+<!-- 
+    <script>
+        //문제3
+        // for(let i = 1; i <= 10; i++) {
+        //     if(i % 4 == 1){
+        //         document.write(i)              
+        //         continue;
+        //     }
+        // }
+        //문제 4
+        // let n = Number(prompt("구구단을 출력합니다."));
+        // document.write(n + '단' + '<br>');
+        // if(n < 1 || n >9 || isNaN(n)){
+        //     alert("잘못입력했습니다!");
+        // }
+        // else{ 
+        //         for(let a = 1; a <=9; a++){
+        //             document.write(n + '*' + a +'='+ (n*a) + '<br>');
+        //         }
+        // }
+        
+
+    </script> -->
+    <!--문제5-->
+    <!-- <h1 id ="h1">마우스를 올려줘!</h1>
+    <script>
+        // //고전방식
+         let n = document.getElementById('h1');
+
+        // n.onmouseover = function() {
+        //     n.style.color = "pink";
+        // }
+        // addEventListener 방식
+        n.addEventListener('mouseover', function(){
+            n.style.color = "pink"
+        }) -->
+    <!--문제6-->
+    <select id = "sel"></select>
+    <script>
+        let years=[1990,1991,1992,1993,1994];
+        let select = document.getElementById("sel");
+
+        for(let i in years){     //i : 인덱스 years[i]:배열안에 있는 데이터 
+            let n=document.createElement("option");
+            n.innerText=years[i];
+            select.appendChild(n);
+        }
+    </script>
+    <br>
+    <select>
+    <option>1990</option>
+    <option>1991</option>
+    <option>1992</option>
+    <option>1933</option>
+    <option>1994</option>
+
+    </select> <br>
+    <!--문제7-->
+    <h1 id = "h1">자바 스크립트</h1>
+    <script>
+        let n = document.getElementById("h1")
+
+        n.addEventListener(`mouseover`, function(){
+            n.style.color='red';
+        })   
+    </script>
+    <!--문제8-->
+    <p>이름: <input type="text"  id = "name"></p>
+    <p>성적: <input type="text" id = "score"></p>
+    <input type="button" onclick="save()" value="저장">
+    <input type="button" onclick="reset()" value="리셋">
+    <li id="result"></li>
+    <script>
+        function save() {
+            let name = document.getElementById('name').value;
+            let score = document.getElementById('score').value;
+            let result = document.getElementById('result')
+            let li = document.createElement("li");
+            li.textContent = name + "의 성적은" + score;
+
+            result.appendChild(li);
+        }
+        function reset() {
+            document.getElementById('name').value = "";
+            document.getElementById('score').value = "";
+            document.getElementById('result').innerHTML = "";
+        }
+    </script>
+    <!--문제9-->
+    <input type = "button" value="버튼 눌러줘!!!" onclick="">
+    <p>
+        [스포츠서울 | 이소영 기자] <span class ="a">코리안</span> 빅리거들의 희비가 엇갈렸다. <br>
+        2026시즌 개막전 예상 <span class ="b">라인업이</span> 공개된 가운데 <br>
+        <span class ="c">이정후</span>(28·샌프란시스코)는 이름을 올렸지만, <br>
+        <span class ="d">김혜성</span>(27·LA 다저스)-송성문(30·샌디에이고)은 나란히 제외됐다.
+    </p>
+    <script>
+            let n1 = document.getElementsByTagName('span');
+            for (let i = 0; i < n1.length; i++) {
+            n1[i].onclick = function() {
+            this.style.backgroundColor = 'orchid ';
+                }
+            }
+    </script>
+
+    <!--문제10-->
+</script>
+</body>
+</html>

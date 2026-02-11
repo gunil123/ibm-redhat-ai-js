@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="on()"> <!--로드된 이후에 on함수 호출-->
+    <!--웹 브라우저가 html 문서의 모든 객체를 읽고 해석하는 화면에 표시할 준비가 완료됨을 의미-->
+    <!-- <h3 id ="head">JavaScript</h3>
+    <script>
+        let head = document.getElementById("head");
+        // //변수에 바로 할당되는 익명함수(함수명이 없다)
+        // //1. 고전 이벤트 방식
+        // head.onclick=function() {
+        //     this.style.color='blue';
+        //     this.style.backgroundColor='while';
+        // }
+        // head.addEventListener('click',function(){
+        //     this.style.color = 'blue';
+        //     this.style.backgroundColor='while';
+        // })
+        //3. 이벤트 리스너 함수 등록
+        head.onclick = on;
+         -->
+        <h2>함수 등록</h2>
+        <p id="p">마우스 올리면 색 변경</p>
+    <script>
+        function on() {
+            let n=document.querySelector('#p');
+            // //1.고전이벤트
+            // n.onmouseover = function() {
+            //     n.style.color='pink'
+            // }
+            //2.이벤트함수
+            // n.addEventListener('mouseover',function(){
+            //     n.style.color='pink';
+            // }
+            // )}
+            //3.이벤트리스터함수등록
+            n.onmouseover=over;
+            function over() {
+                n.style.color = "pink";
+            }
+        }
+    </script>
+</body> 
+</html>

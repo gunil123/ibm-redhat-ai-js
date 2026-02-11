@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .name{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <script>
+        //자바스크립트가 문서가 준비된 이후(html 요소를 다 읽은 후에)
+        //에 진행하도록 하겠다. => window.onload 함수
+        window.onload=function(){
+            let n = document.getElementById("test");
+            n.style.color='red';
+        }
+    </script>
+    <p id = "test">test</p>
+    <script>
+        let n = document.getElementById('test');
+        n.style.color='red';
+    </script>
+<p id = "test">test</p> -->
+    <!-- <a href="http://naver.com">naver</a>
+    <a href="http://google.com">google</a>
+    <a href="#">daum</a> -->
+    <!-- <h1 id="head1"></h1>
+    <h1 id="head2"></h1>
+    <h1 id="head3"></h1> -->
+    <h3 id="head">
+        반갑습니다. <span class="name">길동</span>님
+    </h3>
+    <script>
+        // let a = document.getElementById('head1'); 
+        // let b = document.getElementById('head2');
+        // let c = document.querySelector('#head3');
+        // a.innerHTML='자바스크립트';
+        // a.innerHTML='안녕 <a href="#">링크1</a>'; //안녕 링크1
+
+        // b.innerText='파이썬';
+        // b.innerText='안녕 <a href="#">링크1</a>'; //안녕 <a href="#">링크1</a>
+
+
+        // c.textContent='리엑트';
+        // c.textContent='안녕 <a href="#">링크1</a>'; //안녕 <a href="#">링크1</a>
+        let n = document.getElementById("head");
+
+        console.log(n.innerHTML);  //태그까지 다 출력 -> //반갑습니다. <span class="name">길동</span>님
+        console.log(n.innerText);  //반갑습니다. 님 
+        console.log(n.textContent); // 반갑습니다. 길동님
+
+
+        
+    </script>
+</body>
+</html>

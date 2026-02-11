@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id = "Body">
+        <ol type="A" id = "ramen" onclick="on()">
+            <li>물을 끓인다.</li>
+            <li>라면 넣는다.</li>
+            <li>계란 넣는다.</li>
+            <li>냠냠.</li>
+        </ol>   
+<!-- <button onclick="on()">배경색 바꿔본다</button> -->
+    <script>
+        // function on() {
+        //     let n = document.querySelector("#Body");
+        //     let str = ["red","orange","yellow","green","blue"]
+        // //버튼을 클릭할 때 마다 body태그 객체를 알아내서 body 범위를 배열에서 준 색으로 변경 
+        // for(let i = 0; i < str.length; i++){
+        //     let m = parseInt(Math.random()*5); //0~4까지 범위
+        //     n.style.backgroundColor=str[m];
+        //     }
+        // }  
+        let n = document.getElementsByTagName('li');
+        for(let i in n){
+            n[i].style.color='green';
+        }  
+        //ol 객체 클릭할 때 배경색을 yellow로 변경
+        function on() {
+            let m = document.getElementById("ramen");
+            m.style.backgroundColor="yellow";
+        }
+    </script>
+</body>
+</html>

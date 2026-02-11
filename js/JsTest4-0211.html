@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="frame">
+        <h1 class="head">제목</h1>
+        <p class="p">
+        (서울=연합뉴스) 한상용 기자 = 올해 3월 임기가 끝나는 정신아 <br> 
+        카카오 대표가 한 번 더 카카오 수장을 맡게 될 것으로 보인다. <br>
+        카카오는 11일 오후 이사회를 열고 정신아 대표에 대한 2년 임기의 재선임 안건을 의결했다고 공시했다.
+        </p>
+        <button id="bu1">클릭</button>
+    </div>
+    <script>
+        // //div태그, button 태그 객체 추출(parentNode)
+        // let f = document.querySelector(".frame");
+        // let bu1 = document.getElementById("bu1");
+        // //이벤트 함수식 -> 버튼클릭 시 발생하는 이벤트
+        // bu1.addEventListener('click', function(){
+        //     //부모노드 선택
+        //     this.parentNode.styl    e.backgroundColor = 'yellow';
+        //     this.parentNode.style.border = '3px solid blue';
+        // })
+        //(childNodes)
+        let f = document.querySelector(".frame");
+        let n = f.childNodes.length;
+        f.childNodes[5].style.color='red';
+        //텍스느노드(줄바꿈+공백)
+        //<h1>
+        //텍스느노드(줄바꿈+공백)
+        //<p>
+        //텍스느노드(줄바꿈+공백)
+        //<button>    
+        //텍스느노드(줄바꿈+공백)
+
+        let m=f.children.length;
+        alert(m);
+    </script>
+</body>
+</html>

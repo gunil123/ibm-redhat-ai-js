@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>계산해봅시다.</h1>
+    <hr>
+    <p>3 + 4 = <span onclick="on(this)">답</span></p>
+    <p>5 * 20 + 60 = <span onclick="on(this)">답</span></p>
+    <p>20/5-4*5 = <span onclick="on(this)">답</span></p>
+    
+    <script>
+        function on(num){
+            let n = num.parentElement.innerText;
+            let m = n.indexOf("=");
+            num.innerHTML = eval(n.slice(0,m-1))
+        }
+    </script>
+</body>
+</html>

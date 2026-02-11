@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+//     //저장버튼을 누를 때 마다 이름, 전화번호가 ul li 형태로 동적생성된다.
+//     function save() {
+//       //ul영역 객체 추출
+//       let result = document.getElementById("profile");
+//       let pro =
+//         document.getElementsByName("name1")[0].value +
+//         " ," +
+//         document.getElementsByName("tel1")[0].value;
+//       //이름, 전화번호
+//       //~~~.value : input 태그 안에 넣은 값을 가져올 때 실제 데이터 의미
+//       //li 태그 생성
+//       let a = document.createElement("li");
+//       //텍스트 생성
+//       let b = document.createTextNode(pro);
+//       //li태그에 내가 입력한 이름,전화번호가 들어간다.
+//       a.appendChild(b);
+
+//       //ul에 li들어간다.
+//       result.appendChild(a);
+//     }
+//       function re() {
+//         document.getElementById("profile").innerHTML = "";
+//       }
+//   </script>
+//   <body>
+//     이름 : <input type="text" name="name1" /><br />
+//     전화번호 : <input type="tel" name="tel1" /><br />
+//     <input type="submit" value="저장" onclick="save()" />
+//     <input type="reset" value="취소" onclick="re()" />
+
+//     <ul id="profile"></ul>
+
+// <ul>
+//         <li>자바</li>
+//         <li>스크립트</li>
+//     </ul> 
+<div class="frame">
+    <h1 class="head">제목</h1>
+    <p class="p">
+      8일 국내 및 글로벌 시장에 론칭한 악마단 돌겨억은 출시 3일만인 지난 
+      11일 구글플레이 인기 게임 순위 1위에 기록한 데 이어 16일에는 애플 앱스토어에서도 1위를 차지했다. 
+      악마단 돌겨억은 지난 7일까지 싱가포르와 호주에 소프트론칭을 실시해 게임성을 검증한 바 있다.
+    </p>
+</div>
+<script>
+    //div객체 추출 -> querySelector
+    let frame = document.querySelector(".frame");
+    //h1
+    let head=document.querySelector(".head");
+    //p
+    let p = document.querySelector(".p");
+    //div에 있는 p 태그 제거
+    frame.removeChild(p);
+    //hr 태그 동적 생성
+    let hr = document.createElement("hr");
+    //div에다 hr 태그 자식으로 추가
+    frame.appendChild(hr);
+    //strong 태그 동적생성
+    let strong = document.createElement("strong");
+    //string 태그 사이에 "h1태그를 strong 태그로 변경"이라는 text넣기
+    strong.innerText= "h1태그를 strong 태그로 변경";
+    //replaceChild(new, ild);
+    frame.replaceChild(strong,head);
+</script>
+  </body>
+</html>

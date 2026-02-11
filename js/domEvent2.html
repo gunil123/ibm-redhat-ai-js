@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>라면을 끓이는 순서</h1>
+    <hr />
+    <ol type="A" id="ol">
+      <li>물 끓이기</li>
+      <li>라면,스프 넣기</li>
+      <li>계란 넣기</li>
+      <li>맛있게 먹기</li>
+    </ol>
+  </body>
+  <script>
+    // //1. 고전방식
+     let n = document.getElementById('ol');
+    // n.onclick= function() {
+    //     this.style.color = 'yellow';
+    // }
+    //2. 이벤트함수
+    // n.addEventListener('click',function(){
+    //     n.style.color = 'yellow';
+    // })
+    // 3. 이벤트리스너등록함수
+        n.onclick = click;
+        function click() {
+             n.style.color = 'yellow';
+        }
+  </script>
+</html>

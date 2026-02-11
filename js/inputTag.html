@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    이름 : <input type="text" placeholder="4자~10자 사이, 공백없이"><br>
+    이메일 : <input type="email"> <br>
+    비밀번호: <input type="password"><br>
+    가입경로 : <select>
+        <option>블로그</option>
+        <option>인스타</option>
+    </select><br>
+    메모 : <textarea></textarea><br>
+
+    <!--라디오 버튼은 하나만 선택되어야함 ->name을 같게 주면 하나만 선택됨-->
+    <input type="radio" name="mail">메일수신
+    <input type="radio" name="mail">메일수신안함<br>
+
+    <!--체크박스는 복수 선택 가능-->
+    <input type="checkbox">메일수신
+    <input type="checkbox">메일수신안함<br>
+    
+    <!-- ** submit버튼 ** 입력한 값을 서버에 전송하는 버튼-->
+    <input type="submit" value = '가입하기'><br>
+    <input type="submit" value="취소"><br>
+
+     
+</body>
+</html>

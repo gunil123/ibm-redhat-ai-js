@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 문제1
+    <h1>계산해봅시다.</h1>
+    <hr>
+    <p>3 + 4 = <input type="text" id="ans1" placeholder="답"> </p>
+    <p>5 * 20 + 60 = <input type="text" id="ans2" placeholder="답"></p>
+    <p>20/5-4*5 = <input type="text" id="ans3" placeholder="답"></p>
+    <button type="submit" onclick="on()">제출</button>
+    <script>
+    function on() {
+    document.getElementById('ans1').value = 3 + 4;
+    document.getElementById('ans2').value = 5*20 + 60;
+    document.getElementById('ans3').value = 20/5 - 4*5;
+} -->
+
+    <!-- <h1>할 일 목록</h1>
+    <ul>
+      <li class="1"><span class="check">v</span> 할 일 1</li>
+      <li class="2"><span class="check">v</span> 할 일 2</li>
+      <li class="3"><span class ="check">v</span> 할 일 3</li>
+      <li class="4"><span class="check">v</span> 할 일 4</li>
+      <li class="5"><span class="check">v</span> 할 일 5</li>
+    </ul>
+    <script>
+      let n = document.getElementsByTagName('li');
+      for (let i = 0; i < n.length; i++) {
+        n[i].onclick = function() {
+            this.style.backgroundColor = 'red';
+        }
+      } -->
+
+      <script>
+        //문제3
+        let ary = new Array();
+        for(let i = 0; i<10; i++){
+            let n = Math.floor(Math.random()*100+1);
+            ary.push(n);
+        }
+        document.write(ary + '<br>')
+
+        let max = ary[0]
+        for (let i = 1; i <ary.length; i++) {
+            if (ary[i]>max){
+                max = ary[i]
+            }
+        }
+        document.write(max)
+      </script>
+    </script>
+  </body>
+</html>

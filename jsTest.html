@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <select id="year">   </select>
+    
+    <script>
+        let n = document.getElementById("year");
+        let str='';
+
+        let now =  new Date();
+        let year = now.getFullYear();
+
+        for(let i=year; i>=1980;i--){
+            str+='<option>'+i+"년</option>";
+        }
+        n.innerHTML = str;
+    </script> -->
+    <!-- <p>자신이 하는 일을 <span id ="like">좋아하게</span> 되는 것</p>
+    <button onclick="on()">변경</button>
+    <script> -->
+    <!-- // let n = prompt('문자열 입력');
+
+        // let sp = n.split(",");
+
+        // document.write(sp + '<br>')
+
+        // for(let i in sp){
+        //     document.write(sp[i]);
+        // }
+        // let today = new Date();
+        // let year= today.getFullYear();
+        // let mm = today.getMonth() + 1;
+        // let day = today.getDate();
+        // let hour = today.getHours();
+        // let min  = today.getMinutes();
+        // let ss = today.getSeconds();
+
+        // let str = hour > 12 ? '오후' : '오전';
+        // document.write(`${year} . ${mm}. ${day} ${str}:${hour}:${min}:${ss}`);
+        function on() {
+        let n = document.getElementById('like');
+        n.style.color='violet';
+        n.style.width='4em';
+        n.style.display='block';
+        } -->
+
+    <!-- 식 <input type="text" id="susik" /><br />
+    값 <input type="text" id="result" /><br />
+    <input type="button" value="계산" onclick="calcu()" />
+    <script>
+
+        function calcu(){
+            let susik = document.getElementById("susik");
+            let result = document.querySelector("#result");
+
+            result.value = (eval(susik.value)); 
+    }
+    </script> -->
+    <!-- <input type="radio" name="coffee" value="americano" />아메리카노
+    <input type="radio" name="coffee" value="latte" />카페
+    <input type="radio" name="coffee" value="cappucino" />카푸치노
+
+    <input type="button" value="클릭해" onclick="on()" />
+    <script>
+      let menu = null; //null 데이터 타입은 객체이다.
+
+      function on() {
+        let coffee = document.getElementsByName("coffee");
+        for (let i = 0; i < coffee.length; i++) {
+          if (coffee[i].checked == true) {
+            menu = coffee[i]; //라디오 버튼 체크가 되어있는 값을
+          }
+        }
+        alert(coffee + "주문 들어갔습니다");
+      }
+    </script> -->
+    <!-- <input type="checkbox" value="80" onclick="score(this)">자바
+    <input type="checkbox" value="100" onclick="score(this)">DB
+    <input type="checkbox" value="90" onclick="score(this)">파이썬 <br>
+
+    총합 <input type="text" id="tot" value="0">
+    <script>
+        let sum = 0;
+
+        function score(obj){
+            if(obj.checked){  //체크박스를 체크했다면 true전환
+                sum += parseInt(obj.value);  
+            }
+            else {
+                sum -= parseInt(obj.value);  
+            }
+            document.getElementById("tot").value=sum;
+            }
+        
+    </script> -->
+
+    <img class = "im" src = "C:/Users/hi/Desktop/remen.jpg">
+
+    <button onclick="on()">이미지 경로</button>
+    <button onclick="onChange()">이미지 경로 변경</button>
+    <script>
+    let image = document.querySelector(".im")
+    function on() {
+        alert(image.getAttribute('src'));
+    }
+    function onChange() {
+        image.setAttribute('src', 'aa.png')
+    }
+    </script>
+  </body>
+</html>
