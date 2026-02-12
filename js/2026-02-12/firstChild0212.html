@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="mouse1">마우스</p>
+    <button onclick="on(event)">클릭!</button>
+    html 인라인 이벤트에서는 매게변수명은 event로 -->
+    <!-- <script>
+        function on(e){  //e: 현재 발생한 이벤트 객체
+            let event1 = e.type + "<br>" //이벤트 종류
+            + e.target+"<br>"
+            + e.currentTarget + "<br>" + e.defaultPrevented;   //어떤 태그객체에서 이벤트가 발생했는지
+                 
+            //이벤트가 연결된 요소    **기본동작이 취소되었는지 여부**
+
+            //event1을 p 태그 사이(마우스 자리에)띄우기->innerHTML
+            document.getElementById('mouse1').innerHTML=event1;
+
+
+        }
+    </script> -->
+
+    <!-- <a href="http://www.naver.com" onclick="return on()">네이버로 이동할거냐</a><br>
+    <input type="checkbox">커피<br>
+    <input type="checkbox" onclick="no(event)">빵
+</body>
+<script>
+    function on() {
+        let n = confirm('정말 네이버로 이동할거냐?');
+        return n;
+    }
+
+    function no(e){
+        e.preventDefault();  //이벤트의 디폴트 행동 강제취소
+    }
+</script> -->
+<div class="frame">  
+    <h1>javascript</h1>
+    <div class="c">
+      <h2>css</h2>
+      <p>  
+       8일 국내 및 글로벌 시장에 론칭한 악마단 돌겨억은 출시 3일만인 지난 
+      11일 구글플레이 인기 게임 순위 1위에 기록한 데 이어 16일에는 애플 앱스토어에서도 1위를 차지했다. 
+      악마단 돌겨억은 지난 7일까지 싱가포르와 호주에 소프트론칭을 실시해 게임성을 검증한 바 있다.
+      </p>
+    </div>
+  </div>
+  <script>
+    let f1 = document.querySelector('.frame');
+    f1.firstChild.textContent='처음으로 추가된 텍스트';
+    f1.lastChild.textContent = '마지막에 추가된 텍스트';
+
+    let c1=document.querySelector('.c');
+    let h1=document.querySelector('.c h2');
+
+    //p태그 선택 -> h2태그의 다음 형제 노드
+    h1.nextElementSibling.style.border = '2px solid red';  //2px 두께의 실선 red색
+   
+    //div class = 'c'의 앞에 있는 형제노드 = h1태그
+    c1.previousElementSibling.style.border = '2px detted blue';
+  </script>
+</html>

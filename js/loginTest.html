@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>로그인</h1>
+    <h2>아이디</h2>
+    <input type = "text" id="id" placeholder="아이디를 입력해주세요.."> 
+    <h2>패스워드</h2>
+    <input type = "text" id="pw" placeholder="비밀번호를 입력해주세요.."><br>
+    <input type = "button" id="btn" value="로그인">
+
+    <script>
+        let n = document.getElementById('btn');
+
+        let id = document.getElementById('id');
+        let pw = document.getElementById('pw');
+
+        
+
+        n.onmouseover = function() {
+            if(id.value != '자바' || pw.value != '1234'){
+                alert('다시 입력')
+            }
+            else{
+                alert('로그인')
+            }
+            n.style.backgroundColor = 'pink'
+        }
+    </script>
+</body>
+</html>

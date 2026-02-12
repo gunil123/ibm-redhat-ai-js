@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "head">JavaScript</h1>
+
+    <script>
+        //문서객체 h1 선택
+        let n = document.getElementById("head");
+
+        //2. 이벤트 메소드
+        n.addEventListener('mouseover', mouse1);
+
+        //배경색 pink
+        function mouse1(){
+            this.style.backgroundColor = 'pink';
+        }
+        n.addEventListener('mouseout', function(){
+             this.style.backgroundColor = '';
+        })
+
+        //5초 후에 이벤트 제거
+        setTimeout(function(){
+            n.removeEventListener('mouseover',mouse1);
+        },5000);
+    </script>
+</body>
+</html>
