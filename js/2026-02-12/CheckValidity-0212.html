@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <p>수 입력</p>
+        <input type="number" name="num" id="num" min="1" max="100" required>
+        <button type="button" id="ch">확인</button> 
+    </form>
+    <div id="di"></div>
+    <script>
+        //num,ch,di -> 태그객체 추출
+        let n1 = document.getElementById('num');
+        //let n1 = document.f.num;
+        let n2 = document.getElementById('ch');
+        let n3 = document.getElementById('di');
+    //확인버튼 클릭하면 -> addEventListener형식
+          n2.addEventListener('click',function(){
+          if(n1.checkValidity()){ //입력요소에 유효한 데이터면 true, 아니면 false
+            //"유효한 데이터" -> div영역에 띄우기
+            n3.innerHTML="유효한 데이터";
+          }  
+          else{
+            n3.innerHTML=n1.validationMessage;
+          } 
+        })
+    </script>
+</body>
+</html>

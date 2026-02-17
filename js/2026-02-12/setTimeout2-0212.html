@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // let n = window.open("http://www.naver.com", '_blank', 'width=400, height=700');
+
+        // // //3초 후 팝업 창 자동 닫기
+        // // setTimeout(function(){
+        // //     n.close();
+        // // },3000);
+
+        // let n = window.open("",'','width=400, height=400');
+
+        // //화면 기준으로 왼쪽 200, 상단 200픽셀 떨여저서 위치
+        // n.moveTo(200, 200);
+
+        //   //창 크기 강제 변경
+        // n.resizeBy(400,400);
+
+        // //1초마다 30픽셀씩 오른쪽 아래로 이동
+        // setInterval(function(){
+        //     //n.moveBy(30, 30);
+        // n.resizeBy(400,400);
+        // },1000)
+
+        // 현재 페이지 url
+        // let n=location.href;
+        // document.write(n); 
+        // //5초 후에 현재 페이지 -> google.com 으로 이동
+        // setTimeout(function(){
+        //     location.assign('https://www.google.com');
+        // },5000);
+        window.onload=function() {
+            let timer=document.getElementById("timer1");
+
+            setInterval(function(){
+                timer.textContent = new Date().toLocaleString();
+
+                //1초 후 지우기
+                setTimeout(function(){
+                    timer.textContent='';
+                },1000);
+            },2000) //2초마다 반복하겠다.(보여주기 1초+ 빈화면 1초)
+        }
+    </script>
+    <p id = "timer1"></p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="js">자바스크립트</p>
+</body>
+    <script>
+        let n = document.getElementById('js');
+        // 1.고전방식
+        // n.onclick = function() {
+        //     n.style.color = 'yellow';
+        //     n.style.backgroundColor = 'black';
+        // }
+        // 2. addEventListener 방식
+        n.addEventListener('click', function(){
+            n.style.color = 'yellow';
+            n.style.backgroundColor = 'black';
+        })
+    </script>
+</html>

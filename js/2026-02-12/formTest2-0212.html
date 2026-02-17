@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = "test" class="t">
+        <input type="text" name="first" value="001111" disabled>
+        <input type="text" name="second">
+        <!--input type의 id값과 label for의 이름이 같으면 라디오버튼 인식가능-->
+        <input type="radio" name = "g1" id = "male">
+        <label for="male">남</label>
+        
+        <input type="radio" name="g1" id="female">
+        <label for="female">여</label>
+    </form>
+</body>
+
+<script>
+    let n = document.test.second;
+    console.log(n);    
+
+    let male=document.getElementById("male");
+    let female=document.getElementById("female");
+
+    n.onkeyup=function(){
+        let num = this.value;
+        if(num >= 1 && num<=4){
+            if(num==1 || num==3){
+                male.checked=true; //체크가 된 상태
+                female.checked=false;//체크가 안 된 상태
+            }
+            else{
+                male.checked=false;
+                female.checked=true;
+            }
+        }
+
+    }
+</script>
+</html>

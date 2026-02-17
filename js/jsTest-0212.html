@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JSON
+        const profile={
+            name:'tom',
+            age:30
+        }
+        const msg = `내이름은${profile.name}, 나이는 ${profile.age}`;
+        console.log(msg);
+
+        //2.분할 대입(코드간결/ 가독성 업/필요한 값만 뽑아낼 수 있음)
+        const profile2={
+            name2:'jack',
+            age2:40,
+            adr2:'seoul'
+        }
+
+        //const (속성명) = 객체명 
+        const {name2, age2, adr2} = profile2;
+        const msg2 = `내 이름은 ${name2} 이고 나이는 ${age2} 살이고, ${adr2}에 산다`;
+        console.log(msg2);
+        console.log(adr2);
+        //변수명:별칭
+        const {adr2 : address, name2:proName}=profile2;
+        const msg3=`${proName} 내 이름이고 ${address}에 살아`;
+        console.log(msg3);
+
+        //배열
+        const ary = ['gildong', 34];
+        const msg4=`내 이름은 ${ary[0]}이고 나이는 ${ary[1]}살이다`;
+        console.log(msg4);
+
+        //분할대입
+        const [name, age] = ary;
+        const msg5 = `내 이름은 ${name}이고 나이는 ${age}살이다`;
+        console.log(msg5);
+
+        //const[age22]=ary;
+        //console.log(age22); //gildong 출력 ->배열에서 분할대입은 순서 기준 이므로 변수 하나만 주면 [0] 값 뜸 
+
+         const[, age22]=ary;
+        console.log(age22);   //34출력 -> 두 번째 값 출력원하면 ,로 구분해서 출력
+</script>        
+</body>
+</html>

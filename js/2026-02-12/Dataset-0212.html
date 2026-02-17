@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--사용자 정의속성 (data- )-->
+    <div class="div">
+        <h2 data-num="에스프레소" data-price="4500">더블샷</h2>
+        <h2 data-num="라떼" data-price="5000">라떼</h2>
+        <h2 data-num="아메리카노" data-price="4700">아메리카노</h2>
+    </div>
+    <p>
+        <span id = "order">메뉴없음</span>
+        <span id= "price">0</span>원
+    </p>
+</body>
+<script>
+    let menu=document.querySelectorAll(".div h2");
+    let n2 = document.getElementById("order");
+    let n3 = document.getElementById("price");
+
+    for(let i = 0; i<menu.length; i++){
+        menu[i].addEventListener('click',function(){
+            // let menu2=this.getAttribute('data-num');
+            let menu2=this.dataset.num; //선택한 커피메뉴
+            //let menu2 = this.dataset.numMenu;
+            //data 속성뒤에 영문자 2개면
+            //앞은 그대로, 뒤부분의 맨앞은 대문자로(카멜표기법)
+            let price=this.dataset.price;
+            // let price2=this.dataset['price'];
+            //console.log(menu2);
+
+            //메뉴는 n2, 가격은 n3에 띄우기
+            n2.innerHTml = menu2;
+            n3.innerHTML = price;
+        })
+    }
+</script>
+</html>
