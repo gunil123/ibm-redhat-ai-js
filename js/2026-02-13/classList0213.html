@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            background-color: yellow;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 class="a1 a2" id="b1">javascript</h1>
+    <h2 class="a1 a2 a3">css</h2> -->
+    <h1 class="active">javascript</h1>
+    <h2>css</h2>
+</body>
+<script>
+    // //classList
+    // let n= document.querySelector('#b1');
+    // console.log(n.classList.length);  //h1태그의 클래스 개수
+
+    // n.addEventListener('click',function(){
+    //     this.classList.add('active'); //클래스 추가함
+    // })
+
+    // n.addEventListener('mouseenter',function(){
+    //     this.classList.remove('active'); //클래스 삭제
+    // })
+    let h1 = document.querySelector("h1");
+
+    h1.addEventListener('click', function(){
+        this.classList.toggle('active');  //클래스 추가/제거하는것을 번갈아서 실행
+    })
+</script>
+</html>

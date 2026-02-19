@@ -2,6 +2,95 @@
 
 ## JavaScript
 
+## 02-13 수업내용
+
+### classList
+```html
+<head>
+    <style>
+        .active{
+            background-color: yellow;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 class="a1 a2" id="b1">javascript</h1>
+    <h2 class="a1 a2 a3">css</h2> -->
+    <h1 class="active">javascript</h1>
+    <h2>css</h2>
+</body>
+<script>
+    // //classList
+    // let n= document.querySelector('#b1');
+    // console.log(n.classList.length);  //h1태그의 클래스 개수
+
+    // n.addEventListener('click',function(){
+    //     this.classList.add('active'); //클래스 추가함
+    // })
+
+    // n.addEventListener('mouseenter',function(){
+    //     this.classList.remove('active'); //클래스 삭제
+    // })
+    let h1 = document.querySelector("h1");
+
+    h1.addEventListener('click', function(){
+        this.classList.toggle('active');  //클래스 추가/제거하는것을 번갈아서 실행
+    })
+</script>
+```  
+---
+### 키코드 출력(아스키 코드)
+- KeyCode는 키 위치 기준으로 어떤 키 눌렀는지 숫자로 표현
+- ent : 13
+- shift : 16
+- KeyCode에서 A와 a는 같은 키(대소문자 구분 안 됨)
+
+- ASCII는 문자를 숫자로 변환하는 문자 인코딩 표
+- A : 65 ~ Z:90
+- a : 97~ z:122
+```
+<body>
+    <div class="div">
+        <input type="text" id = "inbox">
+        <p>키 : <span id="result"></span></p>
+    </div>
+    <script>
+        let inbox = document.getElementById("inbox");
+        let result = document.getElementById("result");
+
+        //고전이벤트방식
+        //inbox에 키보드 입력했을때
+        inbox.onkeyup=function(e){
+            let code = e.keyCode;
+            result.innerText=code;
+        }
+    </script>
+</body>
+```
+## 동기와 비동기
+- 동기 : 여러 개 작업을 순서대로, 하나씩 처리하는 방식
+- 한 줄씩 순서대로 실행되는 방식
+- 앞 코드가 끝나야 다음 코드가 실행됨
+
+
+- 비동기 : 어떤 작업이 끝날 때까지 기다리지 않고, 다음 코드가 먼저 실행됨
+- 작업을 순서대로 처리하지 않음**
+- ex) setTimeout, 이벤트, AJAX, Promise, async/await
+---
+
+# 콜백함수(Callback Function)란?
+
+- 어떤 작업이 끝난 뒤 실행되는 함수이며, 다른 함수에 인자로 전달되는 함수 
+
+⇒ 나중에 호출(call back) 되는 함수이다.
+
+- 사용 예) 
+
+- 비동기 처리(Ajax, setTimeout 등)
+- 이벤트 처리
+- 함수 동작 순서를 제어
+
 ## 02-12 수업내용
 
 ## 1.5 DOM 객체의 생성 메소드
@@ -40,11 +129,42 @@ setTimeout(function(){
   n.removeEventListener('mouseover',mouse1);
 },5000);
 ```        
+### 주요 내장 함수
+- setTimeout() : 지정한 시간이 지난 후 한번 실행하는 함수
+```
+setTimeout(콜백함수, 시간, 인수);
+콜백함수란? 다른 함수가 실행을 끝낸 뒤 실행되는 콜백되는 함수를 의미
+---------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<script>
+//5초가 지나면 '5초가 지났다'
+/*setTimeout(function(){
+document.write('5초 지났다');
+},5000)*/
 
-
+function msg(message){
+document.write(message);
+}
+setTimeout(msg, 5000, '5초 지났다');
+//콜백함수 (call back) : 다른 함수가 실행을 끝낸 뒤 실행되는 callback
+//setTimeout(콜백함수, 시간, 인수);
+</script>
+</body>
+</html>
+```
+- setInterval() : 지정한 시간마다 계속 실행하는 함수
+- clearTimeout() : setTimeout() 함수를 중지 시키는 함수
+- clearInterval() : setInterval() 함수를 중지 시키는 함수
 ## 02-11 수업내용
+- createElement, appedChild
 
+- 고전방식, 이벤트 메소드 방식, 이벤트 리스너 함수 등록
 
+- parnetNode
+- childNode, children
 
 ## 02-10 수업내용
 

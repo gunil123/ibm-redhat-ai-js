@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li id="db">데이터베이스</li>
+    <li id="bdb">빅데이터</li>
+    <li id="ai">Ai</li>
+</ul>
+<script>
+    let a = document.getElementsByTagName("li");
+    for(let i=0; i < a.length; i++){
+        a[i].addEventListener('click', function(){
+             this.style.fontSize = '1.2em';        
+        })
+    }
+    
+</script>    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label id="q1">5*3</label> <input type="text" id="ans1">
+    </div>
+
+    <div>
+        <label id="q2">1+2*3</label> <input type="text" id="ans2">
+    </div>
+
+    <div>
+        <label id="q3">12*2</label> <input type="text" id="ans3">
+    </div>
+
+    <button onclick="cal()">결과</button>
+    <div id="count"></div>
+
+    <script>
+        function cal(){
+            let count=0; //맞은 개수
+
+            let label1=document.getElementsByTagName("label");
+            let input1=document.getElementsByTagName("input");
+
+            for(let i = 0; i < label1.length; i++){
+                if(eval(label1[i].innerText) == input1[i].value){
+                    count++; //맞은개수 1 더한다
+                }
+                else{
+                    label1[i].style.textDecoration = 'line-through';
+                }
+            }
+            document.getElementById("count").innerText=`맞은 갯수: ${count}`;
+        }
+    </script>
+</body>
+</html>
