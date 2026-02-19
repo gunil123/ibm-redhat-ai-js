@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test() {
+            return new Promise((resolve)=>{
+                setTimeout(()=>{
+                    resolve('1초 후 완료');
+                },1000)
+            })
+        }
+        async function start() {
+            console.log('시작');
+            const result=await test();
+            console.log(result);
+            console.log('끝');
+        }
+        start();
+    </script>
+</body>
+</html>

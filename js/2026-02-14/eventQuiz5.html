@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--문제 5-->
+    <p id="m">마우스</p>
+    <script>
+        let m = document.getElementById("m");
+        
+        m.onmouseover = function() {
+            this.style.textDecoration = "underline";
+        }
+        m.onmouseout = function() {
+            this.style.textDecoration = "none";
+        }
+    </script>
+</body>
+</html>

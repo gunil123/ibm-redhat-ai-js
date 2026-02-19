@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ||연산자: 연산자의 왼쪽이 false로 판정되면 오른쪽 변환됨
+        //                    왼쪽이 true 면              그 값 변환
+        //falsy 값 flase,""(빈 문자열), null, 0, undefined, NaN
+
+        const n = null;
+        const m = n || "문자열";
+        console.log(m);
+        
+        const n2 = 20;
+        const m2 = n2 || "문자열";
+        console.log(m2);
+
+        //&& : 왼쪽이 true 이면 오른쪽 값 반환됨
+        //              false이면 왼쪽 값
+        const n3 = null;
+        const m3 = n3 && "문자열";
+        console.log(m3);
+    </script>
+</body>
+</html>

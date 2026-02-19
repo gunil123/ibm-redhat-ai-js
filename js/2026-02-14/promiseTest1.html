@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //resolve, reject를 받지 않은 상태
+      // => 나중에 성공/실패로 Promise 상태를 바꿀 수 없다
+      // const promise = new Promise(()=>{
+      //     setTimeout(()=>{
+      //         console.log("hi");
+      //     },3000);
+      // })
+
+      // console.log(promise);
+
+      const promise = new Promise((resolve, reject) => {
+        //실제로 비동기 작업 실행하는 함수 (executor)
+        setTimeout(() => {
+          const n = 100;
+          if (typeof n === "number") {
+            resolve(n + 100);
+          } else {
+            reject("너 숫자 아닌데");
+          }
+        }, 3000); //3초 후에 promise 객체가 resolve 200으로 완료
+      });
+
+      //4초 후에 콘솔 출력
+      setTimeout(() => {
+        console.log(promise);
+      }, 4000);
+
+    //   //then() => 그 후에
+    //   promise.then((value)=>{
+    //     //execute 함수에서 resolve 호출하게 되면
+    //     // 그 후, 즉 then메소드에 전달한 then 메소드 안에 있는 콜백함수 실행
+    //     //그러면서 동시에 resolve에 전달한 인자값 매개변수로 제공
+    //     console.log(value);
+    //   })
+
+      promise.catch((error)=>{
+        console.log(error); //reject에 전달한 결과값 전달
+      })
+    </script>
+  </body>
+</html>

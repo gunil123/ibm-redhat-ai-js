@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <script>
+      function coffee() {
+        return new Promise((resolve)=>{
+            setTimeout(() => {
+                resolve("latte");
+            },2000);
+        })
+        }
+       async function coffee1() {
+         console.log('시작');
+            const result=await coffee();
+            console.log(result);
+       }
+       coffee1();
+    </script>
+  </body>
+</html>

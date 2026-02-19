@@ -2,6 +2,57 @@
 
 ## JavaScript
 
+## 02-14 수업내용
+
+### Promise(API 호출/ 다른 서버와 통신할 때 많이 사용)
+
+## 1. Promise 의 3가지 상태
+
+- 대기(Pending) : 아직 작업이 완료되지 않은 상태
+- 성공(Fulfilled)  : 비동기 작업이 성공적으로 마무리 된 상태 (작업이 성공하면 resolve() 호출됨)
+- 실패(Rejected) : 비동기 작업이 실패한 상태 (작업이 실패하면 reject() 호출됨)
+
+### Async/await
+- 어떤 함수를 비동기 함수로 만들어주는 키워드
+- 함수가 Promise를 반환하도록 반환해주는 키워드
+```js
+async function 함수이름() {
+  const result = await Promise객체;
+  console.log(result);
+}
+```
+- async : 비동기 함수라는 뜻
+- await : Promise 가 resolve 될 때까지 기다림!
+- await 는 항상 async 함수 안에서만 사용가능하다.
+
+### 캡처링과 버블링
+- 캡처링 단계 : 이벤트가 최상위 요소(document)에서 시작되어 이벤트 대상 요소까지 내려가는 단계
+- 타깃 단계 : 이벤트가 실제로 발생한 요소에서 실행되는 단계
+- 버블링 단계 : 이벤트가 이벤트 대상 요소에서 시작하여 부모 요소를 따라 위로 전파되는 단계
+
+---
+### 이항 연산자(||연산자, &&연산자)
+```js
+<script>
+// ||연산자: 연산자의 왼쪽이 false로 판정되면 오른쪽 변환됨
+//                    왼쪽이 true 면              그 값 변환
+//falsy 값 flase,""(빈 문자열), null, 0, undefined, NaN
+
+  const n = null;
+  const m = n || "문자열";
+  console.log(m);
+        
+  const n2 = 20;
+  const m2 = n2 || "문자열";
+  console.log(m2);
+
+//&& : 왼쪽이 true 이면 오른쪽 값 반환됨
+//              false이면 왼쪽 값 반환됨
+  const n3 = null;
+  const m3 = n3 && "문자열";
+  console.log(m3);
+    </script>
+```
 ## 02-13 수업내용
 
 ### classList

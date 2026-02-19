@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function func1() {
+      //     return new Promise((resolve)=> {
+      //         setTimeout(()=>{
+      //             resolve('2초 뒤 성공!');
+      //         },2000);
+      //     });
+      // }
+
+      // func1().then((msg) => {
+      //     console.log(msg);
+      // })
+
+      function func1(success) {
+        return new Promise((reslove, recejct) => {
+          if (success) {
+            resoleve("성공");
+          } else {
+            recejct("실패");
+          }
+        });
+      }
+      func1(false).then((msg) => {
+        console.log(msg);
+      })
+      .catch((err)=> {
+        console.log("에러 처리", err);
+    })
+    </script>
+  </body>
+</html>
