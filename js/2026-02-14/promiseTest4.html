@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('홍길동');
+
+        function profile(id){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    if(id===1){
+                        resolve({id:1, name:'김길동'});
+                    }
+                    else{
+                        reject('프로필 없음');
+                    }    
+                },1000);
+            });
+        }
+        console.log('이길동');
+
+        async function getProfile() {
+            try{ //예외가 날 수도 있는 코드들
+                const user = await profile(100); //실패상황
+                console.log(user);    
+            }
+            catch(error){ //예외가 발생하면 catch구문에서 처리
+                console.log(error);
+            }
+        }
+        getProfile();
+
+        //id값을 100으로 주고 then -> {id:1, name:'김길동'}, catch -> 프로필 없음 출력 작성
+        // profile(100)
+        // .then((user)=> console.log(user))
+        // .catch((error) => console.log(error));
+    </script>
+</body>
+</html>

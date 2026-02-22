@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //체이닝
+        function step1() {
+            return Promise.resolve('1단계');
+        }
+        function step2(prev){
+            return Promise.resolve(`${prev} 2단계`);
+        }
+        function step3(prev){
+            return Promise.resolve(`${prev} 3단계`);
+        }
+
+        async function run() {
+            const r1 = await step1();
+            const r2 = await step2(r1);
+            const r3 = await step3(r2);
+            console.log(r3);
+        }
+        run();
+        // step1()
+        // .then(step2) //.then((value) => step2(value))
+        // .then(step3) 
+        // .then((result) => {
+        //     console.log(result);
+        // });
+    </script>
+</body>
+</html>

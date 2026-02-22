@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         // function multi(a,b){
+      // //     setTimeout(()=>{
+      // //         let mul=a*b;
+      // //         console.log(mul);
+      // //     },2000);
+      // // }
+
+      // //콜백함수
+      // function multi(a,b,call){
+      //     setTimeout(()=>{
+      //         let mul=a*b;
+      //         call(mul);
+      //     },2000);
+      // }
+
+      // multi(3,4,(n)=>{
+      //     console.log(n);
+      // })
+      // function test(num){
+      //   for(let i=1;i<=num;i++){
+      //     console.log(i);
+      //   }
+      // }
+
+      //  function test2(num){
+      //   for(let i=1;i<=num;i++){
+      //     console.log(i*5);
+      //   }
+      // }
+
+      //  function test3(num){
+      //   for(let i=1;i<=num;i++){
+      //     console.log(i*10);
+      //   }
+      // }
+      //   function func1(num, callback) {
+      //     for (let i = 1; i <= num; i++) {
+      //       callback(i);
+      //     }
+      //   }
+      //   func1(5, (i) => {
+      //     console.log(i * 5);
+      //   });
+
+      //   func1(5, (i) => {
+      //     console.log(i * 10);
+      //   });
+
+      //3 초 후에 Promise 객체를 반환하는 함수
+      // 3초 후에 Promise 객체의 상대를 fulfilled상태로 하고, 'hi'를 매개변수로 받는다
+    //   function fun1() {
+    //     return new Promise((resolve) => {
+    //       setTimeout(() => {
+    //         resolve("hi");
+    //       }, 3000);
+    //     });
+    //   }
+
+    //   fun1().then((msg) => {
+    //     console.log(msg);
+    //   });
+        //2. 콜백함수
+    // function fuc1(callback){
+    //     setTimeout(()=>{
+    //         callback("hi")
+    //     },3000);
+    // }
+    // fuc1((msg)=>{
+    //     console.log(msg)
+    // })
+
+    function func1() {
+        return new Promise((resolve)=>{
+            setTimeout(()=>{
+                resolve('hi');
+            },3000)
+        })
+    }
+    async function result() {
+        const msg=await func1();
+        console.log(msg);  //promise객체를 반환받을때까지
+    }
+    result();
+    </script>
+  </body>
+</html>

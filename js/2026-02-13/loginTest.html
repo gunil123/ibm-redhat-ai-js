@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form1">
+    이름 <input type="text" id="name" /> <br>
+    주민등록번호 <input type="text" id="jumin" />-<input type="text" id="jumin2" /> <br>
+    아이디 <input type="text" id="id" /> <br>
+    비밀번호  <input type="password" id="pass" /> <br>
+    비밀번호 확인 <input type="password" id="pass1" /> <br>
+    이메일
+    <input type="text" id="email" />@<input type="text" id="email2" />
+    <select>
+        <option value="nate.com">nate.com</option>
+        <option value="google.com">google.com</option>
+    </select><br>
+    우편번호 <input type="text" id="num" />  <br>
+    주소 <input type="text" id="address" /> <br>
+    핸드폰번호 <input type="text" id="phone" /> <br>
+    직업<select size="3">
+            <option>학생</option>
+            <option>컴퓨터/인터넷</option>
+            <option>언론</option>
+        </select></p>
+    메일/SMS정보 수신 <input type="radio">수신 <input type="radio">수신거부<br>
+    <input type = "submit" value = "회원가입">
+    <input type = "submit" value = "취소">
+    <div id = "r"></div>
+    </form>
+<script>
+
+    let r = document.getElementById('r');
+    let f = document.getElementById("form1")
+
+        f.onsubmit=function(e) {
+            let name = document.getElementById('name').value;
+            let jumin = document.getElementById('jumin').value;
+            let id = document.getElementById('id').value;
+            let pass = document.getElementById('pass').value;
+            let pass1 = document.getElementById('pass1').value;
+            let num = document.getElementById('num').value;
+
+            e.preventDefault();
+
+            if(id.length<4){
+                alert("네 글자 입력해야한다");
+                return;
+            }
+            if (num.indexOf('-') === -1) {
+               alert("우편번호는 '-'를 포함해 입력해야 합니다.");
+                return;
+            }
+            if(pass != pass1){
+                alert("비밀번호 값이 일치하지 않습니다");
+                return;
+            }
+            let result = document.createElement('div');
+            result.innerText = (`${name}, ${jumin}-${jumin}, ${id}, ${pass}`);
+            r.appendChild(result);   
+        };
+       
+
+</script>
+ </body>
+</html>

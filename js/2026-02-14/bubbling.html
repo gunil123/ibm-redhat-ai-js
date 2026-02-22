@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <style>
+        #di {
+            border: 3px solid black;
+            padding: 20px;
+        }
+        #di a {
+            text-decoration: none;
+            border: 3px solid black;
+            padding: 5px 10px;
+            display: inline-block;
+        }
+    </style>
+    <div id="di">
+        <a class="a1" href="#none">태그링크</a>
+    </div>
+    
+    <script>
+        //div, a태그객체 추출
+        let di = document.getElementById("di");
+        let a1 = document.querySelector("#di a");
+
+        //di클릭했을 때 고전이벤트방식으로
+        //태두리 색 blue(borderColor = style.borderColor = 'blue')
+        
+        di.onclick=function() {
+            this.style.borderColor='blue';
+        }
+        //a1을 클릭해도 부모 div가 blue로 변경된다
+        // -> di에 클릭이벤트가 있다 -> a1은 di의 자식이다
+        // 이벤트가 부모인 div로 버블링 되면서 div의 onclick이 실행된다
+        a1.onclick=function(e){
+            e.stopPropagation(); //번식 막기! :a클릭해도 부모 이벤트 실행되지 않음(버블링/캡처링 방지메소드)
+            this.style.borderColor='red';
+        }    
+    </script>
+</body>
+</html>

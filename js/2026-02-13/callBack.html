@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //동기 :순서대로 , 하나씩 처리
+        //비동기 : 작업을 순서대로 처리하지 않음
+
+        // function test() {
+        //     setTimeout(function(){
+        //     console.log("hello")
+        // },3000);
+        // }
+        // test();
+        // console.log("hi")
+
+        // function add(a,b){
+        //     //2초 후에 a+ b 계산 하는 코드
+        //     setTimeout(()=>{let sum = a + b; cosole.log(sum);},2000)
+
+        // }
+        // add(1,2)
+        //console.log("hi");
+        
+        //교차 함수(Higher-order Function) (함수를 매게변수로 받는 함수/함수 리턴하는 함수)
+   
+        function cook(food ,callback){
+            console.log(`${food}요리 시작한다~`);
+
+            setTimeout(()=>{
+                console.log(`${food} 요리 끝`);
+                callback();
+            },2000);
+        }
+        cook('파스타', ()=>{
+            console.log('먹어');
+        })
+    </script>
+</body>
+</html>

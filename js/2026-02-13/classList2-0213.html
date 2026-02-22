@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div">
+        <input type="text" id = "inbox">
+        <p>키 : <span id="result"></span></p>
+    </div>
+    <script>
+        let inbox = document.getElementById("inbox");
+        let result = document.getElementById("result");
+
+        //고전이벤트방식
+        //inbox에 키보드 입력했을때
+        inbox.onkeyup=function(e){
+            let code = e.keyCode;
+            result.innerText=code;
+        }
+    </script>
+</body>
+</html>

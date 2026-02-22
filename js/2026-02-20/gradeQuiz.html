@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>문제는 자동으로 생성되며, 10초가 지나면 자동 채점</h1>
+    <h2>남은시간  <span id = "timer">0</span></h2> 
+    <hr>
+    <span id="sik1">67 - 29</span>  <input type = "text" id = "t1"> <br>
+    <span id="sik2">90 - 73</span>  <input type = "text" id = "t2"> <br>
+    <span id="sik3">91 / 52</span>  <input type = "text" id = "t3"> <br>
+    <span id ="sik4">99 + 3</span>   <input type = "text" id = "t4"> <br>
+    <button type="button" id="btn">다시</button>  정답 : <span id="reslut"></span>개
+</body>
+<script>
+    let t = 10;
+    let result = 0;
+    let timer = document.getElementById("timer");
+    let btn = document.getElementById("btn")
+    
+    setInterval(()=>{
+        if(t>=0){
+            timer.innerHTML = t;
+            t--;
+        }
+    },1000);
+
+    btn.addEventListener("click", function(){
+        let t1 = 10;
+
+        setInterval(()=>{
+        if(t1 >= 0){
+            timer.innerHTML = t1;
+            t1--;
+        }
+    }, 1000);
+    })
+
+    let t1 = document.getElementById("t1");
+    let t2 = document.getElementById("t2");
+    let t3 = document.getElementById("t3");
+    let t4 = document.getElementById("t4");
+
+    let sik1 = document.getElementById("sik1");
+    let sik2 = document.getElementById("sik2");
+    let sik3 = document.getElementById("sik3");
+    let sik4 = document.getElementById("sik4");
+    
+    let n = Math.floor(Math.random()*100+1);
+
+    setTimeout(function(){
+        if( sik1.value === t1.value ){
+            n = result + 1
+        }
+    },10000)
+    result.innerHtml = n;
+</script>
+
+</html>
