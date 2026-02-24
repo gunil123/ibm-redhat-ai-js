@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS시험 5</title>
+  </head>
+  <body>
+    <!-- 5) 자바스크립트에서 비동기 처리 방법에는 어떤 것들이 있는가? 각각의 방법을 설명해라 -->
+    <p>
+        비동기 처리 방법은 어떤 작업이 끝날 때까지 기다리지 않고, 다음 코드가 먼저
+        실행된다.
+        콜백함수, ajax, Promise, async/await 등이 있다.
+        - 함수 안에 또 다른 함수를 파라미터로 넘겨서 실행 순서를 제어한다.
+
+        Promise는 비동기 작업의 완료 또는 실패를 나타내는 객체
+        - 프로미스 객체와 콜백 함수를 사용해서 실행 순서 제어한다.
+        Promise 의 3가지 상태
+        - 대기(Pending) : 아직 작업이 완료되지 않은 상태 
+        - 성공(Fulfilled) : 비동기 작업이 성공적으로 마무리 된 상태 (작업이 성공하면
+        resolve() 호출됨) 
+        - 실패(Rejected) : 비동기 작업이 실패한 상태 (작업이 실패하면 reject() 호출됨) 
+        비동기 작업을 위해 중첩해서 사용하면 코드가 복잡해져 콜백 지옥이 발생할 수 있다.
+       
+      async/await
+        - async/await의 예약어를 사용해서 실행 순서 제어한다.
+        - async : 비동기 함수라는 뜻, 항상 Promise를 반환한다.
+        - await : Promise 가 resolve 될 때까지 기다림
+        - await 는 항상 async 함수 안에서만 사용가능하다.
+    </p>
+  </body>
+</html>

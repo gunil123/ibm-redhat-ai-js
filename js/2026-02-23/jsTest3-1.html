@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS시험 3-1</title>
+</head>
+<body>
+    <script>
+         function getRandomNum(callback) {
+            setTimeout(()=>{
+                let n = Math.floor(Math.random()*10);
+                callback(n);
+            },1000);
+        }
+        getRandomNum((num)=>{
+            alert(num);
+        })
+    </script>
+</body>
+</html>

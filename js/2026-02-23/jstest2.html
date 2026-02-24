@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS시험 2</title>
+</head>
+<body>
+    <input type = "button" value="시작" id = "btn"><br>
+    <span id ="n1">0<span> <span id ="n2">0<span>  <span id="n3">0</span> 
+
+    <script>
+        let btn = document.getElementById("btn");
+        let n1 = document.getElementById("n1");
+        let n2 = document.getElementById("n2");
+        let n3 = document.getElementById("n3");
+        
+        btn.addEventListener('click', function(){
+            setInterval(function(){
+            let n1 = Math.floor(Math.random()*10);
+        },1000);
+        })
+    </script>
+</body>
+</html>

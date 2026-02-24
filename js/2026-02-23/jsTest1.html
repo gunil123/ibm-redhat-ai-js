@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS시험 1</title>
+</head>
+<body>
+    <h1>오늘 계획표</h1>
+    <input type = "text" "placeholder="할 일을 입력하세요" id="n"><input type = "button" value = "추가" id = "addBtn"><br>
+    <div id = "list"></div>
+    총 할 일 : <span id = "c">0</span>개    <br>
+    <input type = "button" value = "전체 삭제" id = delBtn> <br>
+
+    <script>
+        let n = document.getElementById("n");
+        let addBtn = document.getElementById("addBtn");
+        let c = document.getElementById("c");
+        let list = document.getElementById("list")
+        let delbtn = document.getElementById("delbtn")
+        const KEY_ENTER = 13;
+
+        addBtn.addEventListener('click', function() {
+            let c1 = 0;
+            let result = document.createElement("div");
+            result.innerHTML = `${n.value} <input type = "button" id = x value = "x" />`
+            list.appendChild(result);
+            c.innerText = c1++;
+        })
+
+        
+        n.addEventListener("keypress", function (e) {
+            if (e.keyCode === KEY_ENTER) {
+            insertList();
+            n.value = "";
+        }
+        });
+        function insertList() {
+        let result = document.createElement("div");
+        result.innerHTML = `${n.value} <input type = "button" class = "x" value = "x" />`
+        list.appendChild(result);
+        }
+
+        list.addEventListener('click', function(e){
+        if(e.target.classList.contains('x')){
+            let parent=e.target.parentElement; 
+            parent.remove();
+        }
+      })
+        delbtn.addEventListener('click', function(){
+            innerHTML = ''
+        })
+        
+
+    </script>
+</body>
+</html>
