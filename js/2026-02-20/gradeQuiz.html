@@ -7,56 +7,73 @@
 </head>
 <body>
     <h1>문제는 자동으로 생성되며, 10초가 지나면 자동 채점</h1>
-    <h2>남은시간  <span id = "timer">0</span></h2> 
+    <h2>남은시간 <span id="timer">10</span></h2> 
     <hr>
-    <span id="sik1">67 - 29</span>  <input type = "text" id = "t1"> <br>
-    <span id="sik2">90 - 73</span>  <input type = "text" id = "t2"> <br>
-    <span id="sik3">91 / 52</span>  <input type = "text" id = "t3"> <br>
-    <span id ="sik4">99 + 3</span>   <input type = "text" id = "t4"> <br>
-    <button type="button" id="btn">다시</button>  정답 : <span id="reslut"></span>개
+    <span id="sik1"></span> <input type="text" id="t1"> <span id="ans1"></span> <br>
+    <span id="sik2"></span> <input type="text" id="t2"> <span id="ans2"></span> <br>
+    <span id="sik3"></span> <input type="text" id="t3"> <span id="ans3"></span> <br>
+    <span id="sik4"></span> <input type="text" id="t4"> <span id="ans4"></span> <br>
+    
+    <button type="button" id="btn">다시</button> 정답 : <span id="result">0</span>개
 </body>
+
 <script>
     let t = 10;
-    let result = 0;
+    let correctCount = 0;
     let timer = document.getElementById("timer");
-    let btn = document.getElementById("btn")
-    
-    setInterval(()=>{
-        if(t>=0){
+    let btn = document.getElementById("btn");
+    let answers = []; 
+    const operators = ['+', '-', '*', '/'];
+
+    for (let i = 1; i <= 4; i++) {
+        let n1 = Math.floor(Math.random() * 100 + 1);
+        let n2 = Math.floor(Math.random() * 100 + 1);
+        let op = operators[Math.floor(Math.random() * operators.length)];
+        
+        let expression = n1 + " " + op + " " + n2;
+        document.getElementById("sik" + i).innerText = expression;
+
+        let res = 0;
+        if(op === '+') res = n1 + n2;
+        else if(op === '-') res = n1 - n2;
+        else if(op === '*') res = n1 * n2;
+        else if(op === '/') res = parseFloat((n1 / n2).toFixed(2));
+        answers.push(res);
+    }
+
+    let countdown = setInterval(() => {
+        if (t >= 0) {
             timer.innerHTML = t;
+            if (t === 0) {
+                clearInterval(countdown);
+                check(); 
+            }
             t--;
         }
-    },1000);
-
-    btn.addEventListener("click", function(){
-        let t1 = 10;
-
-        setInterval(()=>{
-        if(t1 >= 0){
-            timer.innerHTML = t1;
-            t1--;
-        }
     }, 1000);
-    })
 
-    let t1 = document.getElementById("t1");
-    let t2 = document.getElementById("t2");
-    let t3 = document.getElementById("t3");
-    let t4 = document.getElementById("t4");
+    function check() {
+        for (let i = 1; i <= 4; i++) {
+            let userInput = document.getElementById("t" + i).value;
+            let sikElement = document.getElementById("sik" + i);
+            let ansElement = document.getElementById("ans" + i);
+            let inputField = document.getElementById("t" + i);
 
-    let sik1 = document.getElementById("sik1");
-    let sik2 = document.getElementById("sik2");
-    let sik3 = document.getElementById("sik3");
-    let sik4 = document.getElementById("sik4");
-    
-    let n = Math.floor(Math.random()*100+1);
+            inputField.disabled = true; //입력창 잠금
 
-    setTimeout(function(){
-        if( sik1.value === t1.value ){
-            n = result + 1
+            if (parseFloat(userInput) === answers[i-1]) {
+                correctCount++;
+            } else {
+                sikElement.style.textDecoration = "line-through";
+                ansElement.innerText = " 오답! 정답: " + answers[i-1];
+                ansElement.style.color = "red";
+            }
         }
-    },10000)
-    result.innerHtml = n;
-</script>
+        document.getElementById("result").innerText = correctCount;
+    }
 
+    btn.addEventListener("click", function() {
+        location.reload();
+    });
+</script>
 </html>
